@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button btnLend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Signup button clicked");
         startActivity(intent);
 
+    }
+
+    public void  toMaps(View view)
+    {
+        startActivity(new Intent(MainActivity.this, MapsActivity.class));
     }
 
 }
