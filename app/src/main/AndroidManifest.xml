@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Main2ActivityGenre" />
+        <activity android:name=".ActivityGenreDrama"></activity>
     </application>
 
 </manifest>
