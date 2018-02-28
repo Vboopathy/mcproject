@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ebookclub.ActivityBookclub"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/buttonstyle"
+        android:text="Create Book Club Event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <LinearLayout
+        android:id="@+id/createEventLayout"
+        android:layout_width="368dp"
+        android:layout_height="308dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="95dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="349dp"
+            android:layout_height="89dp"
+            android:layout_alignEnd="@+id/btnDone"
+            android:layout_below="@+id/createBtn"
+            android:layout_marginEnd="103dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter Event Name"/>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="349dp"
+            android:layout_height="86dp"
+            android:layout_alignEnd="@+id/btnDone"
+            android:layout_below="@+id/createBtn"
+            android:layout_marginEnd="103dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter Event Location" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="349dp"
+            android:layout_height="91dp"
+            android:layout_alignEnd="@+id/btnDone"
+            android:layout_below="@+id/createBtn"
+            android:layout_marginEnd="103dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter Event Description" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="111dp"
+        android:layout_height="55dp"
+        android:background="@drawable/buttonstyle"
+        android:text="Done"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="420dp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+</RelativeLayout>

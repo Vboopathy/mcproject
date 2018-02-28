@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "931465386986",
+    "firebase_url": "https://mcproject-master.firebaseio.com",
+    "project_id": "mcproject-master",
+    "storage_bucket": "mcproject-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931465386986:android:13bfa422e27076a6",
+        "android_client_info": {
+          "package_name": "com.example.android.ebookclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931465386986-qk3g92de4te9fecpk2lbnl98m0065f8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByYBKmcw7gMHtA_1JXwxfrbv-RSwOqYFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
