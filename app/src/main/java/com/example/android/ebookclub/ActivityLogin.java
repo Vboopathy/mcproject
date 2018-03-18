@@ -35,7 +35,11 @@ public class ActivityLogin extends AppCompatActivity {
             System.out.println("Signup button clicked");
             startActivity(intent);
         }
-        else{System.out.println("Invalid!");}
+
+        else{System.out.println("Invalid!");
+
+
+        }
 
 
     }
