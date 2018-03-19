@@ -9,17 +9,13 @@ import android.widget.EditText;
 public class ActivityLogin extends AppCompatActivity {
 
 
-    private EditText username;
-    private EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = findViewById(R.id.txtUsername);
-        password = findViewById(R.id.txtPassword);
     }
-
+/*
 
     public void toMain(View view){
 
@@ -43,4 +39,5 @@ public class ActivityLogin extends AppCompatActivity {
 
 
     }
+    */
 }

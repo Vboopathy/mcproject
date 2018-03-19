@@ -4,38 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.ebookclub.ActivityLogin"
-    android:background="@drawable/login">
+    tools:context="com.example.android.ebookclub.ActivityLogin">
 
 
-    <EditText
-      android:id="@+id/txtUsername"
-      android:layout_width="200dp"
-      android:layout_height="40dp"
-      android:layout_centerInParent="true"
-        android:background="@color/colorWhite"
-        android:text="Username"/>
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_below="@+id/txtUsername"
-        android:layout_centerHorizontal="true"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:background="@color/colorWhite"
-        android:text="Password"
-        android:layout_marginTop="5dp"/>
-
-    <Button
-        android:id="@+id/btnSignin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignIn"
-        android:background="@color/colorPrimary"
-        android:layout_below="@+id/txtPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"/>
 
 
 </RelativeLayout>
