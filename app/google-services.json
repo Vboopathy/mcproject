@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "931465386986",
-    "firebase_url": "https://mcproject-master.firebaseio.com",
-    "project_id": "mcproject-master",
-    "storage_bucket": "mcproject-master.appspot.com"
+    "project_number": "382916618376",
+    "firebase_url": "https://ebookclub-21673.firebaseio.com",
+    "project_id": "ebookclub-21673",
+    "storage_bucket": "ebookclub-21673.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:931465386986:android:13bfa422e27076a6",
+        "mobilesdk_app_id": "1:382916618376:android:13bfa422e27076a6",
         "android_client_info": {
           "package_name": "com.example.android.ebookclub"
         }
       },
       "oauth_client": [
         {
-          "client_id": "931465386986-qk3g92de4te9fecpk2lbnl98m0065f8u.apps.googleusercontent.com",
+          "client_id": "382916618376-5bafrif9pl093ksrejqp4ngi6urlfj91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "8cd45b9c791709130376dee4c893faaeceedb949"
+          }
+        },
+        {
+          "client_id": "382916618376-hfvipaad64rh1hhdavnbfgftis9blh7h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyByYBKmcw7gMHtA_1JXwxfrbv-RSwOqYFE"
+          "current_key": "AIzaSyBhGGprDPbFELKltVbhatrMLqCDYrBuHsE"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382916618376-hfvipaad64rh1hhdavnbfgftis9blh7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

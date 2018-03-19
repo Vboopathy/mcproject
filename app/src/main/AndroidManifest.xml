@@ -16,15 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ActivityRegistration" />
+        <activity android:name=".ActivityLogin" />
+        <activity android:name=".ActivityBookclub">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2ActivityGenre" />
-        <activity android:name=".ActivityGenreDrama"></activity>
+        <activity android:name=".ActivityGenreDrama" />
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -41,8 +44,12 @@
         <activity
             android:name=".MapsActivity"
             android:label="Map"
-            android:parentActivityName=".MainActivity"></activity>
-
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".NavigationActivity" />
+        <activity android:name=".DisplayEventActivity"
+            android:label="Go Back"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".ActivityBookclub"></activity>
     </application>
 
 </manifest>
