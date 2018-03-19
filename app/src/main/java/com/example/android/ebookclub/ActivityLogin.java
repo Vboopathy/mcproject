@@ -35,14 +35,22 @@ public class ActivityLogin extends AppCompatActivity {
         loginPassword = findViewById(R.id.password);
         signUpBtn = findViewById(R.id.signup);
         loginBtn = findViewById(R.id.login);
-
         mAuth = FirebaseAuth.getInstance();
+
     }
 
 
     public void onClickLogin(View view){
         String textEmail = loginEmail.getText().toString();
         String textPassword = loginPassword.getText().toString();
+        System.out.println(textEmail);
+        System.out.println(textPassword);
+        System.out.println(textEmail);
+        System.out.println(textPassword);
+        System.out.println(textEmail);
+        System.out.println(textPassword);
+        System.out.println(textEmail);
+        System.out.println(textPassword);
         if (!TextUtils.isEmpty(textEmail) && !TextUtils.isEmpty(textPassword)) {
             mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -59,10 +67,7 @@ public class ActivityLogin extends AppCompatActivity {
         }
     }
 
-
-
     void sendToMain() {
-
         Intent mainIntent = new Intent(ActivityLogin.this, ActivityBookclub.class);
         startActivity(mainIntent);
         finish();
@@ -77,10 +82,13 @@ public class ActivityLogin extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
         if (currentUser != null){
             sendToMain();
         }
+
     }
 
 
