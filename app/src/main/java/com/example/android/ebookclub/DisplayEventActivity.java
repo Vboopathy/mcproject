@@ -7,19 +7,19 @@ import android.widget.TextView;
 
 public class DisplayEventActivity extends AppCompatActivity {
 
-    public TextView textView1, textView2, textView3;
+    public TextView textViewName, textViewLocation, textViewDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_event);
-        textView1 = findViewById(R.id.textViewName);
-        textView2 = findViewById(R.id.textViewLocation);
-        textView3 = findViewById(R.id.textViewDescription);
+        textViewName = findViewById(R.id.textViewName);
+        textViewLocation = findViewById(R.id.textViewLocation);
+        textViewDescription = findViewById(R.id.textViewDescription);
         Intent intent= getIntent();
 
-        textView1.setText(intent.getStringExtra("name"));
-        textView2.setText(intent.getStringExtra("location"));
-        textView3.setText(intent.getStringExtra("description"));
+        textViewName.setText(intent.getStringExtra("name"));
+        textViewLocation.setText(intent.getStringExtra("location"));
+        textViewDescription.setText(intent.getStringExtra("description"));
     }
 }
