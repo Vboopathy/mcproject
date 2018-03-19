@@ -51,5 +51,4 @@
         android:onClick="sendToRegister"
         android:text="Signup for an Account" />
 
-
 </RelativeLayout>

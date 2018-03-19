@@ -39,18 +39,9 @@ public class ActivityLogin extends AppCompatActivity {
 
     }
 
-
     public void onClickLogin(View view){
         String textEmail = loginEmail.getText().toString();
         String textPassword = loginPassword.getText().toString();
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
         if (!TextUtils.isEmpty(textEmail) && !TextUtils.isEmpty(textPassword)) {
             mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -90,10 +81,6 @@ public class ActivityLogin extends AppCompatActivity {
         }
 
     }
-
-
-
-
 
 
 }
