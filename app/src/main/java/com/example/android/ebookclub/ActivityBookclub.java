@@ -16,6 +16,7 @@ public class ActivityBookclub extends AppCompatActivity {
     public Button createEvent;
     public Button done;
     public LinearLayout createEventLayout;
+    public Button btnSignout;
 
     //FOR MAIN
     private FirebaseAuth mAuth;
@@ -31,9 +32,11 @@ public class ActivityBookclub extends AppCompatActivity {
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
 
+
         //FOR MAIN
         mAuth = FirebaseAuth.getInstance();
 
+        btnSignout= findViewById(R.id.btnSignout);
 
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +54,8 @@ public class ActivityBookclub extends AppCompatActivity {
                 done.setVisibility(done.INVISIBLE);
             }
         });
-    }
 
+    }
 
     //FOR MAIN
     @Override
@@ -60,22 +63,28 @@ public class ActivityBookclub extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        String email = currentUser.getEmail();
 
         if(currentUser == null){
             sendToLogin();
         }
     }
+
     //FOR MAIN
     private void logout(){
-        mAuth.signOut();
+        //mAuth.signOut();
         sendToLogin();
     }
+
     //FOR MAIN
     private void sendToLogin(){
         Intent intent = new Intent(ActivityBookclub.this, ActivityLogin.class);
         startActivity(intent);
         finish();
+    }
+
+    public void signOut(View view){
+        mAuth.signOut();
+        sendToLogin();
     }
 
 }
