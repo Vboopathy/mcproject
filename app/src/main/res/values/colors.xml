@@ -5,5 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#fff</color>
     <color name="place_autocomplete_search_text">#ccc</color>
+    <color name="Black">#000000</color>
 
 </resources>
