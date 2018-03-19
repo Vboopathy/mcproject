@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mcproject.iml" filepath="$PROJECT_DIR$/mcproject.iml" />
+      <module fileurl="file://C:\Users\Sampath\AndroidStudioProjects\mcproject\mcproject.iml" filepath="C:\Users\Sampath\AndroidStudioProjects\mcproject\mcproject.iml" />
     </modules>
   </component>
 </project>
