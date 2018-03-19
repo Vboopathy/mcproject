@@ -36,7 +36,6 @@ public class ActivityLogin extends AppCompatActivity {
         signUpBtn = findViewById(R.id.signup);
         loginBtn = findViewById(R.id.login);
 
-
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -63,6 +62,7 @@ public class ActivityLogin extends AppCompatActivity {
 
 
     void sendToMain() {
+
         Intent mainIntent = new Intent(ActivityLogin.this, ActivityBookclub.class);
         startActivity(mainIntent);
         finish();

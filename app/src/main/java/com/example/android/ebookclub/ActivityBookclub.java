@@ -1,16 +1,24 @@
 package com.example.android.ebookclub;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityBookclub extends AppCompatActivity {
 
     public Button createEvent;
     public Button done;
     public LinearLayout createEventLayout;
+
+    //FOR MAIN
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -22,6 +30,10 @@ public class ActivityBookclub extends AppCompatActivity {
         createEventLayout=findViewById(R.id.createEventLayout);
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
+
+        //FOR MAIN
+        mAuth = FirebaseAuth.getInstance();
+
 
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,4 +52,30 @@ public class ActivityBookclub extends AppCompatActivity {
             }
         });
     }
+
+
+    //FOR MAIN
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String email = currentUser.getEmail();
+
+        if(currentUser == null){
+            sendToLogin();
+        }
+    }
+    //FOR MAIN
+    private void logout(){
+        mAuth.signOut();
+        sendToLogin();
+    }
+    //FOR MAIN
+    private void sendToLogin(){
+        Intent intent = new Intent(ActivityBookclub.this, ActivityLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

@@ -20,7 +20,7 @@ public class ActivityRegister extends AppCompatActivity {
     private EditText passwordConfirmationText;
     private Button createAccount;
 
-
+ //TODO: add logoout functionality
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class ActivityRegister extends AppCompatActivity {
 
 
     }
-
 
     public void sendToLogin(View view){
         Intent intent = new Intent(ActivityRegister.this, ActivityLogin.class);
