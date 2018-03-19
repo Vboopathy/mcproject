@@ -8,6 +8,10 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+
+//THIS CLASS IS NOW DEAD
+
+
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
