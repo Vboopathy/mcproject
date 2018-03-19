@@ -19,7 +19,6 @@ public class ActivityRegister extends AppCompatActivity {
     private EditText passwordText;
     private EditText passwordConfirmationText;
     private Button createAccount;
-    private Button toLogin;
 
 
 
