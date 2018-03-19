@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
+/*
 
 
     public void toLogin(View view){
@@ -39,5 +39,5 @@ public class MainActivity extends AppCompatActivity {
     {
         startActivity(new Intent(MainActivity.this, MapsActivity.class));
     }
-
+*/
 }
