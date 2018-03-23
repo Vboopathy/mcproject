@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ActivityBookclub extends AppCompatActivity {
 
@@ -17,9 +21,11 @@ public class ActivityBookclub extends AppCompatActivity {
     public LinearLayout createEventLayout;
     public EditText editTextName, editTextLocation, editTextDesc;
 
-    String name1 = "Event Name :  ";
-    String location1 = "Event Location :  ";
-    String description1 = "Event Description :  ";
+    String eventName = "";
+    String eventLocation = "";
+    String eventDescription = "";
+
+    DatabaseReference eventsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,8 @@ public class ActivityBookclub extends AppCompatActivity {
 
         done=findViewById(R.id.btnDone);
         createEventLayout=findViewById(R.id.createEventLayout);
+
+        eventsList = FirebaseDatabase.getInstance().getReference("events");
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
 
@@ -53,21 +61,28 @@ public class ActivityBookclub extends AppCompatActivity {
                 createEvent.setVisibility(createEvent.VISIBLE);
                 displayEvents.setVisibility(displayEvents.VISIBLE);
                 done.setVisibility(done.INVISIBLE);
-
+                eventName += editTextName.getText().toString();
+                eventLocation += editTextLocation.getText().toString();
+                eventDescription += editTextDesc.getText().toString();
+                addEvent();
             }
         });
         displayEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name1 += editTextName.getText().toString();
-                location1 += editTextLocation.getText().toString();
-                description1 += editTextDesc.getText().toString();
                 Intent intent= new Intent(getApplicationContext(), DisplayEventActivity.class);
-                intent.putExtra("name",name1);
-                intent.putExtra("location", location1);
-                intent.putExtra("description", description1);
+                intent.putExtra("name",eventName);
+                intent.putExtra("location", eventLocation);
+                intent.putExtra("description", eventDescription);
                 startActivity(intent);
             }
         });
+    }
+
+    public void addEvent(){
+        String id = eventsList.push().getKey();
+        ActivityBookClubEventDTO clubEventDTO = new ActivityBookClubEventDTO(id, eventName, eventLocation, eventDescription);
+        eventsList.child(id).setValue(clubEventDTO);
+        Toast.makeText(this, "Event Created", Toast.LENGTH_SHORT).show();
     }
 }
