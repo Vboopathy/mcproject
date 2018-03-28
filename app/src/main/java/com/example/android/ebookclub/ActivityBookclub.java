@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class ActivityBookclub extends AppCompatActivity {
 
@@ -36,6 +39,7 @@ public class ActivityBookclub extends AppCompatActivity {
         editTextLocation = findViewById(R.id.editText1);
         editTextDesc = findViewById(R.id.editText2);
         displayEvents = findViewById(R.id.displayBtn);
+
 
         done=findViewById(R.id.btnDone);
         createEventLayout=findViewById(R.id.createEventLayout);
@@ -70,7 +74,7 @@ public class ActivityBookclub extends AppCompatActivity {
         displayEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), DisplayEventActivity.class);
+                Intent intent= new Intent(getApplicationContext(), ActivityEventsDisplay.class);
                 intent.putExtra("name",eventName);
                 intent.putExtra("location", eventLocation);
                 intent.putExtra("description", eventDescription);
