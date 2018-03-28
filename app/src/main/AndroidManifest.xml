@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityGenreDrama" />
-        <activity android:name=".ActivityLogin"/>
+        <activity android:name=".ActivityLogin" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,7 +42,8 @@
             android:name=".MapsActivity"
             android:label="Map"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ActivityRegister"></activity>
+        <activity android:name=".ActivityRegister" />
+        <activity android:name=".ActivityProfile"></activity>
     </application>
 
 </manifest>
