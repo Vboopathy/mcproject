@@ -29,9 +29,7 @@
             android:label="fiction"
             android:parentActivityName=".ActivityGenre"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ActivityRating"
-            android:parentActivityName=".ActivityGenreDrama" />
+
         <activity android:name=".ActivityBookclub" />
 
         <!--
