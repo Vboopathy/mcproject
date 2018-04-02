@@ -28,6 +28,7 @@ public class ActivityPlacePicker extends AppCompatActivity {
     TextView PlaceName;
     TextView PlaceAddress;
     Button  PlaceButton;
+    Button SaveButton;
     public static final int MY_PERMISSION_FINE_LOCATION = 101;
     int PLACE_PICKER_REQUEST = 1;
 
@@ -35,13 +36,14 @@ public class ActivityPlacePicker extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lend);
+        setContentView(R.layout.activity_lend_new);
 
         requestPermission();
 
         PlaceName = (TextView) findViewById(R.id.PlaceName);
         PlaceAddress = (TextView) findViewById(R.id.PlaceAddress);
         PlaceButton = (Button) findViewById(R.id.GetPlace);
+        SaveButton = (Button) findViewById(R.id.SaveDetails);
 
         PlaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,7 @@ public class ActivityPlacePicker extends AppCompatActivity {
                 PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                 try {
                     startActivityForResult(builder.build(ActivityPlacePicker.this), PLACE_PICKER_REQUEST);
+
                 } catch (GooglePlayServicesRepairableException e) {
                     e.printStackTrace();
                 } catch (GooglePlayServicesNotAvailableException e) {
@@ -99,7 +102,7 @@ public class ActivityPlacePicker extends AppCompatActivity {
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
                 PlaceName.setText(place.getName());
                 PlaceAddress.setText(place.getAddress());
-
+                SaveButton.setVisibility(View.VISIBLE);
             }
         }
     }
