@@ -69,7 +69,7 @@ public class ActivityGenreDrama extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String s = "" + fictionlist.get(i);
-                Log.e("courseList", fictionlist + "");
+                Log.e("fictionList", fictionlist + "");
                 String[] courseClicked = s.split(",");
                 Log.e("S", "" + courseClicked[0]);
                 fictionClickedInfoList = new ArrayList<>();
