@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ActivityGenre">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +32,9 @@
             android:parentActivityName=".ActivityGenre"
             android:theme="@style/AppTheme" />
         <activity android:name=".ActivityBookclub" />
+
+
+
 
 
         <activity android:name=".ActivityLogin"/>
@@ -52,7 +56,14 @@
             android:label="Map"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".ActivityRegister" />
-        <activity android:name=".FictionInfoActivity" />
+        <activity android:name=".FictionInfoActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+            />
         <activity android:name=".ActivityGenreRomance" />
         <activity android:name=".RomanceInfoActivity" />
         <activity android:name=".HorrorInfoActivity" />
