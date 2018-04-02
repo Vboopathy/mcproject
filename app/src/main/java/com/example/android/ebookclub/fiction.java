@@ -5,12 +5,12 @@ package com.example.android.ebookclub;
  */
 
 public class fiction {
-    String description,name;
+    String description,name, review, authorname;
 
     @Override
     public String toString(){
 
-        return name + ","  + description;
+        return name + ","  + description + "," + review + "," + authorname + ",";
 
     }
 
@@ -22,6 +22,23 @@ public class fiction {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getReview() {
+        return review;
+    }
+
+    public String getAuthorname() {
+        return authorname;
+    }
+
+    public void setAuthorname(String authorname) {
+        this.authorname = authorname;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
 
     public String getDescription() {
         return description;
@@ -40,6 +57,8 @@ public class fiction {
     public fiction(String description){
         this.name = name;
         this.description = description;
+        this.review = review;
+        this.authorname = authorname;
 
     }
 }
