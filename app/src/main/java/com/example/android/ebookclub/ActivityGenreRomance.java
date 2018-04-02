@@ -76,7 +76,7 @@ public class ActivityGenreRomance extends AppCompatActivity {
                 s = "" + romanceClickedInfoList;
                 Log.e("romanceclicked", s);
 
-                Intent intent = new Intent(getApplicationContext(), FictionInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RomanceInfoActivity.class);
                 intent.putExtra("ExtraMsg", romanceClickedInfoList);
                 startActivity(intent);
             }
