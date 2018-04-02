@@ -15,15 +15,15 @@ import java.util.List;
  * Created by Sowmya Umesh on 4/1/2018.
  */
 
-public class HorrorListAdapter extends ArrayAdapter<horror> {
+public class SelfhelpListAdapter extends ArrayAdapter<selfhelp> {
 
     private Activity context;
-    private List<horror> horrorList;
+    private List<selfhelp> selfhelpList;
 
-    public HorrorListAdapter(Activity context,List<horror> horrorList) {
-        super(context, R.layout.genre_list, horrorList);
+    public SelfhelpListAdapter(Activity context, List<selfhelp> selfhelpList) {
+        super(context, R.layout.genre_list, selfhelpList);
         this.context = context;
-        this.horrorList = horrorList;
+        this.selfhelpList = selfhelpList;
     }
 
     @NonNull
@@ -36,9 +36,9 @@ public class HorrorListAdapter extends ArrayAdapter<horror> {
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
         TextView textViewauthorname = listViewItem.findViewById(R.id.tvauthorname);
 
-        horror hor = horrorList.get(position);
-        textViewName.setText(hor.getName());
-        textViewauthorname.setText(hor.getAuthorname());
+        selfhelp sh = selfhelpList.get(position);
+        textViewName.setText(sh.getName());
+        textViewauthorname.setText(sh.getAuthorname());
         return listViewItem;
 
     }

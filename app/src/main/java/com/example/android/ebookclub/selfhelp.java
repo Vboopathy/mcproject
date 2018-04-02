@@ -4,7 +4,7 @@ package com.example.android.ebookclub;
  * Created by Sowmya Umesh on 4/1/2018.
  */
 
-public class horror {
+public class selfhelp {
 
     String description,name,authorname;
 
@@ -14,7 +14,6 @@ public class horror {
         return name + ","  + description + "," + authorname;
 
     }
-
 
     public String getAuthorname() {
         return authorname;
@@ -42,14 +41,15 @@ public class horror {
 
 
 
-    public horror(){
+    public selfhelp(){
 
     }
 
-    public horror(String description){
+    public selfhelp(String description){
         this.name = name;
         this.description = description;
         this.authorname = authorname;
 
     }
+
 }

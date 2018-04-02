@@ -34,9 +34,12 @@ public class FictionListAdapter extends ArrayAdapter<fiction> {
         View listViewItem = inflater.inflate(R.layout.genre_list, null, true);
 
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
+        TextView textViewauthorname = listViewItem.findViewById(R.id.tvauthorname);
+
 
         fiction fic = fictionList.get(position);
-        textViewName.setText(fic.getName().toString());
+        textViewName.setText(fic.getName());
+        textViewauthorname.setText(fic.getAuthorname());
         return listViewItem;
     }
 }
