@@ -55,15 +55,20 @@
         android:id="@+id/PlaceName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Place Name" />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/PlaceAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/GetPlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Place Address " />
+        android:text="Lending Location" />
 
     <EditText
         android:id="@+id/fromTime"
@@ -75,15 +80,6 @@
         android:text="From Time" />
 
     <EditText
-        android:id="@+id/Date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Date" />
-
-    <EditText
         android:id="@+id/toTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,12 +88,14 @@
         android:inputType="textPersonName"
         android:text="To Time" />
 
-    <Button
-        android:id="@+id/GetPlace"
+    <EditText
+        android:id="@+id/Date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Lending Location" />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Date" />
 
     <Button
         android:id="@+id/SaveDetails"
