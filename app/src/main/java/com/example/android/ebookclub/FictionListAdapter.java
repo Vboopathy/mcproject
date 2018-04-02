@@ -35,14 +35,14 @@ public class FictionListAdapter extends ArrayAdapter<fiction> {
 
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
 
-        TextView textViewDesc = listViewItem.findViewById(R.id.description);
+        //TextView textViewDesc = listViewItem.findViewById(R.id.description);
 
         TextView textViewauthorname = listViewItem.findViewById(R.id.tvauthorname);
 
 
         fiction fic = fictionList.get(position);
 
-        textViewDesc.setText(fic.getDescription());
+        //textViewDesc.setText(fic.getDescription());
 
 
 
