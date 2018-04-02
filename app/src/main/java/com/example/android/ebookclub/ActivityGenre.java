@@ -16,6 +16,9 @@ public class ActivityGenre extends AppCompatActivity {
         setContentView(R.layout.activity_genre);
 
         Button buttonfiction = findViewById(R.id.buttonfiction);
+        Button buttonromance = findViewById(R.id.buttonromance);
+        Button buttonhorror = findViewById(R.id.buttonhorror);
+        Button buttonselfhelp = findViewById(R.id.buttonselfhelp);
 
          buttonfiction.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -25,6 +28,29 @@ public class ActivityGenre extends AppCompatActivity {
              }
          });
 
+         buttonromance.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreRomance.class);
+                 startActivity(intent);
+             }
+         });
+
+         buttonhorror.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreHorror.class);
+                 startActivity(intent);
+             }
+         });
+
+         buttonselfhelp.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreSelfhelp.class);
+                 startActivity(intent);
+             }
+         });
 
 
 

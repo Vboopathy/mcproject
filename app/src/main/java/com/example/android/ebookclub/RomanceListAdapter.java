@@ -37,9 +37,11 @@ public class RomanceListAdapter extends ArrayAdapter{
         View listViewItem = inflater.inflate(R.layout.genre_list, null, true);
 
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
+        TextView textViewauthorname = listViewItem.findViewById(R.id.tvauthorname);
 
-        romance fic = romanceList.get(position);
-        textViewName.setText(fic.getName().toString());
+        romance rom = romanceList.get(position);
+        textViewName.setText(rom.getName());
+        textViewauthorname.setText(rom.getAuthorname());
         return listViewItem;
     }
 }

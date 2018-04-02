@@ -6,15 +6,22 @@ package com.example.android.ebookclub;
 
 public class romance {
 
-    String description,name;
+    String description,name,authorname;
 
     @Override
     public String toString(){
 
-        return name + ","  + description;
+        return name + ","  + description + "," + authorname;
 
     }
 
+    public String getAuthorname() {
+        return authorname;
+    }
+
+    public void setAuthorname(String authorname) {
+        this.authorname = authorname;
+    }
 
     public String getName() {
         return name;
@@ -41,6 +48,7 @@ public class romance {
     public romance(String description){
         this.name = name;
         this.description = description;
+        this.authorname = authorname;
 
     }
 }
