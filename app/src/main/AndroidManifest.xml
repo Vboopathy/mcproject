@@ -24,12 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ActivityGenreDrama"
             android:label="fiction"
             android:parentActivityName=".ActivityGenre"
             android:theme="@style/AppTheme" />
         <activity android:name=".ActivityBookclub" />
+
+
+        <activity android:name=".ActivityLogin"/>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
