@@ -38,13 +38,7 @@ public class fiction {
         return review;
     }
 
-    public String getAuthorname() {
-        return authorname;
-    }
 
-    public void setAuthorname(String authorname) {
-        this.authorname = authorname;
-    }
 
     public void setReview(String review) {
         this.review = review;

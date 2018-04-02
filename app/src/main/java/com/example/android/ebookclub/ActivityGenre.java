@@ -20,7 +20,6 @@ public class ActivityGenre extends AppCompatActivity {
     FirebaseAuth AuthRef;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,7 @@ public class ActivityGenre extends AppCompatActivity {
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
 
-                        switch(menuItem.getItemId()){
+                        switch (menuItem.getItemId()) {
 
 //                            case R.id.nav_lend:
 //                                callIntent(ActivityPlacePicker.class);
@@ -91,32 +90,35 @@ public class ActivityGenre extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        buttonromance.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityGenre.this, ActivityGenreRomance.class);
+                startActivity(intent);
+            }
+        });
+
+
+        buttonhorror.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityGenre.this, ActivityGenreHorror.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonselfhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityGenre.this, ActivityGenreSelfhelp.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
-         buttonromance.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreRomance.class);
-                 startActivity(intent);
-             }
-         });
-
-         buttonhorror.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreHorror.class);
-                 startActivity(intent);
-             }
-         });
-
-         buttonselfhelp.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(ActivityGenre.this,ActivityGenreSelfhelp.class);
-                 startActivity(intent);
-             }
-         });
 
 
     @Override
