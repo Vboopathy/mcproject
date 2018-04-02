@@ -37,6 +37,7 @@ public class FictionListAdapter extends ArrayAdapter<fiction> {
 
         fiction fic = fictionList.get(position);
         textViewDesc.setText(fic.getName().toString());
+        textViewDesc.setText(fic.getDescription().toString());
         return listViewItem;
     }
 }
