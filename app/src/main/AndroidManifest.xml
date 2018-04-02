@@ -51,7 +51,7 @@
             android:label="Go Back"
             android:parentActivityName=".ActivityBookclub"
             android:theme="@style/AppTheme" />
-
+        <activity android:name=".BorrowBookActivity"></activity>
     </application>
 
 </manifest>
