@@ -12,18 +12,18 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Sowmya Umesh on 3/29/2018.
+ * Created by Sowmya Umesh on 4/1/2018.
  */
 
-public class FictionListAdapter extends ArrayAdapter<fiction> {
+public class HorrorListAdapter extends ArrayAdapter<horror> {
 
     private Activity context;
-    private List<fiction> fictionList;
+    private List<horror> horrorList;
 
-    public FictionListAdapter(Activity context,List<fiction> fictionList){
-        super(context, R.layout.genre_list, fictionList);
+    public HorrorListAdapter(Activity context,List<horror> horrorList) {
+        super(context, R.layout.genre_list, horrorList);
         this.context = context;
-        this.fictionList = fictionList;
+        this.horrorList = horrorList;
     }
 
     @NonNull
@@ -35,8 +35,9 @@ public class FictionListAdapter extends ArrayAdapter<fiction> {
 
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
 
-        fiction fic = fictionList.get(position);
-        textViewName.setText(fic.getName().toString());
+        horror hor = horrorList.get(position);
+        textViewName.setText(hor.getName().toString());
         return listViewItem;
+
     }
 }

@@ -16,32 +16,33 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ActivityGenreRomance extends AppCompatActivity {
+public class ActivityGenreHorror extends AppCompatActivity {
 
 
+    DatabaseReference mDatabaseRefhorror;
+    ArrayList<horror> horrorlist;
+    ListView listViewhorror;
+    ArrayList<String> horrorClickedInfoList;
 
-    DatabaseReference mDatabaseRefromance;
-    ArrayList<fiction> romancelist;
-    ListView listViewromance;
-    ArrayList<String> romanceClickedInfoList;
+
 
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        mDatabaseRefromance.addValueEventListener(new ValueEventListener() {
+        mDatabaseRefhorror.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                romancelist.clear();
+                horrorlist.clear();
                 for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
-                    fiction rom = courseSnapshot.getValue(fiction.class);
-                    romancelist.add(rom);
-                    Log.e("romanceSnapshot: ", rom.toString());
+                    horror hor = courseSnapshot.getValue(horror.class);
+                    horrorlist.add(hor);
+                    Log.e("horrorSnapshot: ", hor.toString());
 
                 }
-                FictionListAdapter adapter = new FictionListAdapter(ActivityGenreRomance.this, romancelist);
-                listViewromance.setAdapter(adapter);
+                HorrorListAdapter adapter = new HorrorListAdapter(ActivityGenreHorror.this, horrorlist);
+                listViewhorror.setAdapter(adapter);
 
             }
 
@@ -52,32 +53,32 @@ public class ActivityGenreRomance extends AppCompatActivity {
         });
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_genre_romance);
+        setContentView(R.layout.activity_genre_horror);
 
-        romancelist = new ArrayList<>();
-        mDatabaseRefromance = FirebaseDatabase.getInstance().getReference("romance");
-        listViewromance = findViewById(R.id.list_item_romance);
+        horrorlist = new ArrayList<>();
+        mDatabaseRefhorror = FirebaseDatabase.getInstance().getReference("horror");
+        listViewhorror = findViewById(R.id.list_item_horror);
 
-        listViewromance.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listViewhorror.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String s = "" + romancelist.get(i);
-                Log.e("romanceList", romancelist + "");
+                String s = "" + horrorlist.get(i);
+                Log.e("horrorList", horrorlist + "");
                 String[] courseClicked = s.split(",");
                 Log.e("S", "" + courseClicked[0]);
-                romanceClickedInfoList = new ArrayList<>();
+                horrorClickedInfoList = new ArrayList<>();
                 for (int index = 0; index < courseClicked.length; index++) {
-                    romanceClickedInfoList.add("" + courseClicked[index]);
+                    horrorClickedInfoList.add("" + courseClicked[index]);
                 }
-                s = "" + romanceClickedInfoList;
-                Log.e("romanceclicked", s);
+                s = "" + horrorClickedInfoList;
+                Log.e("horrorclicked", s);
 
                 Intent intent = new Intent(getApplicationContext(), FictionInfoActivity.class);
-                intent.putExtra("ExtraMsg", romanceClickedInfoList);
+                intent.putExtra("ExtraMsg", horrorClickedInfoList);
                 startActivity(intent);
             }
         });

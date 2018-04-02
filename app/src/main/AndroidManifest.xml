@@ -30,7 +30,6 @@
             android:label="fiction"
             android:parentActivityName=".ActivityGenre"
             android:theme="@style/AppTheme" />
-
         <activity android:name=".ActivityBookclub" />
 
 
@@ -57,7 +56,9 @@
         <activity android:name=".ActivityGenreRomance" />
         <activity android:name=".RomanceInfoActivity" />
         <activity android:name=".HorrorInfoActivity" />
-        <activity android:name=".SelfHelpInfoActivity"></activity>
+        <activity android:name=".SelfHelpInfoActivity" />
+        <activity android:name=".ActivityGenreHorror" />
+        <activity android:name=".ActivityGenreSelfhelp"></activity>
     </application>
 
 </manifest>

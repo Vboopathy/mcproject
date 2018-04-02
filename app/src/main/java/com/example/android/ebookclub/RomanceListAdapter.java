@@ -21,7 +21,7 @@ public class RomanceListAdapter extends ArrayAdapter{
     private List<romance> romanceList;
 
     public RomanceListAdapter(Activity context,List<fiction> fictionList){
-        super(context, R.layout.activity_fiction_info, fictionList);
+        super(context, R.layout.genre_list, fictionList);
         this.context = context;
         this.romanceList = romanceList;
 
@@ -34,12 +34,12 @@ public class RomanceListAdapter extends ArrayAdapter{
 
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View listViewItem = inflater.inflate(R.layout.activity_romance_info, null, true);
+        View listViewItem = inflater.inflate(R.layout.genre_list, null, true);
 
-        TextView textViewDesc = listViewItem.findViewById(R.id.description);
+        TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
 
         romance fic = romanceList.get(position);
-        textViewDesc.setText(fic.getName().toString());
+        textViewName.setText(fic.getName().toString());
         return listViewItem;
     }
 }

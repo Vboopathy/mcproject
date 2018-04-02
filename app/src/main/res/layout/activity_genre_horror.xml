@@ -4,15 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.ebookclub.ActivityGenreDrama"
-    >
-
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--app:srcCompat="@drawable/fiction"-->
-        <!--android:scaleType="centerCrop"/>-->
+    tools:context="com.example.android.ebookclub.ActivityGenreHorror">
 
     <TextView
         android:id="@+id/textView2"
@@ -21,18 +13,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Fiction"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/Black"
+        android:text="Horror"
+        android:textColor="@color/place_autocomplete_search_text"
         android:textSize="30sp" />
 
     <ListView
-        android:id="@+id/list_item_fiction"
+        android:id="@+id/list_item_horror"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginStart="11dp"
         android:layout_marginTop="22dp" />
+
 
 </RelativeLayout>
