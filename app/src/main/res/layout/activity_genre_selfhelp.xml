@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.ebookclub.ActivityGenreSelfhelp">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Self Help"
+        android:textColor="@color/Black"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/list_item_selfhelp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="22dp" />
+
+
 </RelativeLayout>
