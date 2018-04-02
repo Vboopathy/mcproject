@@ -52,7 +52,7 @@ public class ActivityGenreSelfhelp extends AppCompatActivity {
                 s = "" + selfhelpClickedInfoList;
                 Log.e("selfhelpclicked", s);
 
-                Intent intent = new Intent(getApplicationContext(), FictionInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SelfHelpInfoActivity.class);
                 intent.putExtra("ExtraMsg", selfhelpClickedInfoList);
                 startActivity(intent);
             }
