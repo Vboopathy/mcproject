@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ActivityGenreDrama" />
+        <activity android:name=".ActivityLogin" />
+
+
         <activity
             android:name=".ActivityGenreDrama"
             android:label="fiction"
@@ -38,6 +42,7 @@
 
 
         <activity android:name=".ActivityLogin"/>
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -56,6 +61,9 @@
             android:label="Map"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".ActivityRegister" />
+
+        <activity android:name=".ActivityProfile"></activity>
+
         <activity android:name=".FictionInfoActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -70,6 +78,7 @@
         <activity android:name=".SelfHelpInfoActivity" />
         <activity android:name=".ActivityGenreHorror" />
         <activity android:name=".ActivityGenreSelfhelp"></activity>
+
     </application>
 
 </manifest>

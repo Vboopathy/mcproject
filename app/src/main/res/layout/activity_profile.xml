@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ebookclub.ActivityProfile">
+
+    <ImageView
+        android:id="@+id/profilePicView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profilePicView"
+        android:layout_marginTop="80dp">
+
+        <TextView
+            android:id="@+id/fNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:text="Mathew Zimola"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fNameTextView"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:text="Halifax, NS"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/bioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/locationTextView"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:text="Student living in Halifax, NS. I enjoy non-fiction"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

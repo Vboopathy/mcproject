@@ -87,4 +87,11 @@ public class ActivityBookclub extends AppCompatActivity {
         sendToLogin();
     }
 
+    public void sendToProfile(View view){
+        Intent intent = new Intent(ActivityBookclub.this, ActivityProfile.class);
+        startActivity(intent);
+        finish();
+
+    }
+
 }
