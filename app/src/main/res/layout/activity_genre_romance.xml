@@ -4,15 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.ebookclub.ActivityGenreDrama"
-    >
-
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--app:srcCompat="@drawable/fiction"-->
-        <!--android:scaleType="centerCrop"/>-->
+    tools:context="com.example.android.ebookclub.ActivityGenreRomance">
 
     <TextView
         android:id="@+id/textView2"
@@ -20,13 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Fiction"
+        android:text="Romance"
         android:textColor="@color/Black"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ListView
-        android:id="@+id/list_item_fiction"
+        android:id="@+id/list_item_romance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
