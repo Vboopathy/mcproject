@@ -21,11 +21,7 @@
         <activity android:name=".ActivityRegistration" />
         <activity android:name=".ActivityLogin" />
         <activity android:name=".ActivityBookclub">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ActivityGenreDrama" />
 
@@ -51,7 +47,13 @@
             android:label="Go Back"
             android:parentActivityName=".ActivityBookclub"
             android:theme="@style/AppTheme" />
-        <activity android:name=".BorrowBookActivity"></activity>
+        <activity android:name=".BorrowBookActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
