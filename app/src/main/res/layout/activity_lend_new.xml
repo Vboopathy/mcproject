@@ -12,8 +12,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:hint="Person Name"/>
+        android:hint="Lender Name"/>
 
     <EditText
         android:id="@+id/bookName"
@@ -22,7 +21,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="BookName" />
+        android:hint="Name of the book" />
 
     <EditText
         android:id="@+id/Description"
@@ -31,7 +30,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Description" />
+        android:hint="Comment" />
 
     <EditText
         android:id="@+id/email"
@@ -39,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Email" />
+        android:inputType="textWebEmailAddress"
+        android:hint="Email" />
 
     <EditText
         android:id="@+id/PhoneNumber"
@@ -48,45 +47,30 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Phone Number " />
+        android:inputType="number"
+        android:hint="Phone Number(Optional) " />
 
     <TextView
         android:id="@+id/PlaceName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/PlaceAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/GetPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Lending Location" />
-
-    <EditText
-        android:id="@+id/fromTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="From Time" />
-
-    <EditText
-        android:id="@+id/toTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="To Time" />
+        android:text="Lending Location"
+        />
 
     <EditText
         android:id="@+id/Date"
@@ -94,8 +78,26 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Date" />
+        android:inputType="date"
+        android:hint="Date flexible to be borrowed" />
+
+    <EditText
+        android:id="@+id/fromTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="time"
+        android:hint="Available from (eg.21.30)" />
+
+    <EditText
+        android:id="@+id/toTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="time"
+        android:hint="Available till (eg. 22.30)" />
 
     <Button
         android:id="@+id/SaveDetails"
@@ -104,6 +106,5 @@
         android:layout_weight="1"
         android:text="Save"
         android:visibility="invisible" />
-
 
 </LinearLayout>

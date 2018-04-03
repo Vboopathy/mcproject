@@ -40,11 +40,6 @@
             android:label="Map"
             android:parentActivityName=".MainActivity"></activity>
 
-        <activity
-            android:name=".ActivityPlacePicker">
-
-        </activity>
-
     </application>
 
 </manifest>
