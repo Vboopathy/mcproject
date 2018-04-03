@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.ebookclub.ActivityProfile">
+    tools:context="com.example.android.ebookclub.ActivityEditProfile">
+
 
     <RelativeLayout
         android:layout_width="210dp"
@@ -12,26 +13,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:id="@+id/rel1">
-    <ImageView
-        android:id="@+id/profilePicView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
 
         <ImageView
-            android:id="@+id/editBtnView"
+            android:id="@+id/profilePicView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
+        <ImageView
+            android:id="@+id/editCmraBtnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:onClick="sentToEditProfile"
+            android:onClick="toCamera"
             android:src="@mipmap/edit_btn" />
 
-
-
     </RelativeLayout>
-
 
     <TextView
         android:id="@+id/ratingTextView"
@@ -81,7 +80,5 @@
             android:textSize="15sp"
             android:text="Student living in Halifax, NS. I enjoy non-fiction"/>
     </RelativeLayout>
-
-
 
 </RelativeLayout>

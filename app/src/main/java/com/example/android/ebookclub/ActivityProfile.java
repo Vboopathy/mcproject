@@ -1,10 +1,12 @@
 package com.example.android.ebookclub;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +34,13 @@ public class ActivityProfile extends AppCompatActivity {
 
     private DatabaseReference userTable;
     private FirebaseAuth mAuth;
+
+    /*  User Rating Calculation
+    def newAvg(oldAvg, totalPoints, newValue):
+	       return ((oldAvg*totalPoints)+newValue)/(totalPoints+1)
+     */
+
+
 
 
 
@@ -105,8 +114,13 @@ public class ActivityProfile extends AppCompatActivity {
         });
 
 
-
-
-
     }
+
+
+    public void sentToEditProfile(View view){
+        Intent intent = new Intent(ActivityProfile.this, ActivityEditProfile.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
