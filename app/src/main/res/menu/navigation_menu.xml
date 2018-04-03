@@ -12,7 +12,13 @@
         <item
             android:id="@+id/nav_events"
 
-            android:title=" Book Club Events" />
+            android:title="Book Club Events" />
+
+        <item
+            android:id="@+id/nav_profile"
+
+            android:title="Your Profile" />
+
 
         <item
             android:id="@+id/nav_logout"

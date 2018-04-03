@@ -28,6 +28,7 @@ public class ActivityProfile extends AppCompatActivity {
     private ImageView profilePic;
     private TextView bio;
     private String imageUrl;
+    private Double rating;
 
     private DatabaseReference userTable;
     private FirebaseAuth mAuth;
@@ -46,9 +47,7 @@ public class ActivityProfile extends AppCompatActivity {
 
         userTable = FirebaseDatabase.getInstance().getReference().child("users"); //child "users" for user table
 
-        //mAuth = FirebaseAuth.getInstance();
-
-        //run internet on UI thread
+        // todo run internet on UI thread -> bundle this
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }
@@ -58,7 +57,6 @@ public class ActivityProfile extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        System.out.println("HELLLLLLO WORLD \n\n\n\n\n\n\n");
         System.out.println(currentUser.getEmail().toString());
 
         userTable.orderByChild("email").equalTo(currentUser.getEmail()).addChildEventListener(new ChildEventListener() {
@@ -66,14 +64,12 @@ public class ActivityProfile extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
 
-                //User person = dataSnapshot.getValue(User.class);
-                //System.out.println(person);
-                System.out.println(dataSnapshot.getValue().toString());
-                System.out.println(dataSnapshot.child("email").getValue().toString());
                 name.setText(dataSnapshot.child("name").getValue().toString());
                 bio.setText(dataSnapshot.child("bio").getValue().toString());
                 city.setText(dataSnapshot.child("city").getValue().toString());
                 imageUrl = dataSnapshot.child("profileImg").getValue().toString();
+
+
 
                 try {
                     Bitmap bitmap = BitmapFactory.decodeStream((InputStream) new URL(imageUrl).getContent());
