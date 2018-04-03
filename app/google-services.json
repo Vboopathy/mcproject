@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "382916618376-esmuphmmkde4i0kjs9bpmcoo0dm2evjc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "d90c2c5ca83e77daa3cde25e9df4850965c540c2"
+          }
+        },
+        {
+          "client_id": "382916618376-2r4gn3ummb2j087q0lj916jjeekv68h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "7b6630994a4006718966a56fe2f64afdfbc63e05"
+          }
+        },
+        {
           "client_id": "382916618376-dgn0a2nhflvjn38d716skt2e3c4q8dr5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
