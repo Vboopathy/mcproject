@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ebookclub.ActivityRegister">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register for the Book Club"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email..."
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <EditText
+        android:id="@+id/passwordRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password.."
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/emailRegister" />
+
+    <EditText
+        android:id="@+id/passwordRegister2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password.."
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/passwordRegister" />
+
+    <Button
+        android:id="@+id/createAccountBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordRegister2"
+        android:layout_centerHorizontal="true"
+        android:onClick="registerUser"
+        android:text="Create New Account" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:onClick="sendToLogin"
+        android:text="Already Have an Account?" />
+
+
+</RelativeLayout>

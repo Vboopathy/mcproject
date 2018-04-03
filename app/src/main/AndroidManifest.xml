@@ -2,13 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.ebookclub">
 
+
     <permission android:name="com.fv4.app.permission.MAPS_RECEIVE" />
     <permission android:name="android.permission.ACCESS_FINE_LOCATION"></permission>
+
+    <!-- <permission android:name="com.fv4.app.permission.MAPS_RECEIVE" /> -->
+
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -17,12 +24,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ActivityLend">
+
+        <activity android:name=".ActivityGenre">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        <activity android:name=".ActivityGenreDrama" />
+        <activity android:name=".ActivityLogin" />
+        -->
+
+        <activity
+            android:name=".ActivityGenreDrama"
+            android:label="fiction"
+            android:parentActivityName=".ActivityGenre"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ActivityBookclub" />
+        <activity android:name=".ActivityLogin" />
+
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,8 +64,24 @@
         <activity
             android:name=".MapsActivity"
             android:label="Map"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ActivityRegister" />
+        <activity android:name=".ActivityProfile" />
+        <activity android:name=".FictionInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        />
+        <activity android:name=".ActivityGenreRomance" />
+        <activity android:name=".RomanceInfoActivity" />
+        <activity android:name=".HorrorInfoActivity" />
+        <activity android:name=".SelfHelpInfoActivity" />
+        <activity android:name=".ActivityGenreHorror" />
+        <activity android:name=".ActivityGenreSelfhelp" />
+        <activity android:name=".ActivityEditProfile"></activity>
     </application>
 
 </manifest>

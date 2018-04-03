@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.ebookclub.ActivityGenreDrama">
+    tools:context="com.example.android.ebookclub.ActivityGenreDrama"
+    >
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:srcCompat="@drawable/fiction"-->
+        <!--android:scaleType="centerCrop"/>-->
 
     <TextView
         android:id="@+id/textView2"
@@ -13,12 +21,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Drama"
-        android:textColor="@color/place_autocomplete_search_text"
+        android:text="Fiction"
+        android:textColor="@color/Black"
         android:textSize="30sp" />
 
     <ListView
-        android:id="@+id/list_item"
+        android:id="@+id/list_item_fiction"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
