@@ -41,7 +41,6 @@
             android:name=".MapsActivity"
             android:label="Map"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".NavigationActivity" />
         <activity
             android:name=".ActivityEventsDisplay"
             android:label="Go Back"
