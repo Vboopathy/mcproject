@@ -24,7 +24,6 @@ public class ActivityGenre extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +52,7 @@ public class ActivityGenre extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
 
+
                             case R.id.nav_lend:
                                 callIntent(ActivityLend.class);
                                 break;
@@ -60,6 +60,7 @@ public class ActivityGenre extends AppCompatActivity {
                             case R.id.nav_borrow:
                                 callIntent(BorrowBookActivity.class);
                                 break;
+
 
                             case R.id.nav_events:
                                 callIntent(ActivityBookclub.class);
@@ -101,6 +102,7 @@ public class ActivityGenre extends AppCompatActivity {
         });
 
 
+
         buttonromance.setOnClickListener(new View.OnClickListener()
 
         {
@@ -116,9 +118,11 @@ public class ActivityGenre extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityGenre.this, ActivityGenreHorror.class);
+
                 startActivity(intent);
             }
         });
+
 
         buttonselfhelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,21 +134,27 @@ public class ActivityGenre extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item){
-        if (mToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        
 
-    }
+        
+
+
+        @Override
+        public boolean onOptionsItemSelected (MenuItem item){
+            if (mToggle.onOptionsItemSelected(item)) {
+                return true;
+            }
+            return super.onOptionsItemSelected(item);
+
+        }
+
 
 
     public void bookclub(View view) {
         callIntent(ActivityBookclub.class);
     }
 
-    public void callIntent(Class className){
+    public void callIntent(Class className) {
         Intent intent = new Intent(getApplicationContext(), className);
         startActivity(intent);
     }
@@ -174,4 +184,5 @@ public class ActivityGenre extends AppCompatActivity {
     }
 
 }
+
 
