@@ -2,8 +2,17 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/book">
 
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:text="Please enter Lending details below"
+        android:textColor="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/Name"
@@ -12,7 +21,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Lender Name"/>
+        android:hint="Lender Name*"/>
 
     <EditText
         android:id="@+id/bookName"
@@ -21,16 +30,9 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Name of the book" />
+        android:hint="Name of the book*" />
 
-    <EditText
-        android:id="@+id/Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Comment" />
+
 
     <EditText
         android:id="@+id/email"
@@ -49,6 +51,15 @@
         android:ems="10"
         android:inputType="number"
         android:hint="Phone Number(Optional) " />
+
+    <EditText
+        android:id="@+id/Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Comment(Optional)" />
 
     <TextView
         android:id="@+id/PlaceName"

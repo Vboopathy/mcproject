@@ -185,9 +185,8 @@ public class ActivityLend extends AppCompatActivity {
 
     private void updateLabel() {
 
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         Date.setText(sdf.format(myCalendar.getTime()));
     }
 
