@@ -30,7 +30,8 @@
         android:layout_height="wrap_content"
         android:hint="Password.."
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/emailRegister" />
+        android:layout_below="@+id/emailRegister"
+        />
 
     <EditText
         android:id="@+id/passwordRegister2"

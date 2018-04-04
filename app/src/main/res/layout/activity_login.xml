@@ -30,7 +30,8 @@
         android:layout_height="wrap_content"
         android:hint="password"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/email" />
+        android:layout_below="@+id/email"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/login"
