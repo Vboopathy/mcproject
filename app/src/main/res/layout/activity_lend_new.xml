@@ -2,8 +2,18 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/lendnewimage">
 
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:text="Please enter Lending details below"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/common_google_signin_btn_text_dark"/>
 
     <EditText
         android:id="@+id/Name"
@@ -12,7 +22,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Lender Name"/>
+        android:hint="Lender Name*"/>
 
     <EditText
         android:id="@+id/bookName"
@@ -21,16 +31,9 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Name of the book" />
+        android:hint="Name of the book*" />
 
-    <EditText
-        android:id="@+id/Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Comment" />
+
 
     <EditText
         android:id="@+id/email"
@@ -39,7 +42,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textWebEmailAddress"
-        android:hint="Email" />
+        android:hint="Email*" />
 
     <EditText
         android:id="@+id/PhoneNumber"
@@ -50,19 +53,30 @@
         android:inputType="number"
         android:hint="Phone Number(Optional) " />
 
+    <EditText
+        android:id="@+id/Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Comment(Optional)" />
+
     <TextView
         android:id="@+id/PlaceName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="@color/Black"/>
 
     <TextView
         android:id="@+id/PlaceAddress"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="@color/Black"/>
 
     <Button
         android:id="@+id/GetPlace"
@@ -70,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Lending Location"
+        android:textColor="@android:color/holo_red_dark"
         />
 
     <EditText
@@ -79,7 +94,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="date"
-        android:hint="Date flexible to be borrowed" />
+        android:hint="Date flexible to be borrowed*" />
 
     <EditText
         android:id="@+id/fromTime"
@@ -88,7 +103,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="time"
-        android:hint="Available from (eg.21.30)" />
+        android:hint="Available from (eg.21.30)*" />
 
     <EditText
         android:id="@+id/toTime"
@@ -97,7 +112,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="time"
-        android:hint="Available till (eg. 22.30)" />
+        android:hint="Available till (eg. 22.30)*" />
 
     <Button
         android:id="@+id/SaveDetails"

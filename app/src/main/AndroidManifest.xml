@@ -33,7 +33,13 @@
         </activity>
 
 
-        <activity android:name=".ActivityLend"/>
+
+        <activity android:name=".ActivityLend"
+            android:label="Back"
+            android:parentActivityName=".ActivityGenre"
+            android:theme="@style/AppTheme"/>
+
+        
 
         <activity android:name=".ActivityGenre">
 
