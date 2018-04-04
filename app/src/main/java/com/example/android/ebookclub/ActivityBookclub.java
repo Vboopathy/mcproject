@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,6 +32,9 @@ public class ActivityBookclub extends AppCompatActivity {
     String eventDescription = "";
 
     DatabaseReference eventsList;
+    //FOR MAIN
+    private FirebaseAuth mAuth;
+    public Button btnSignout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,11 @@ public class ActivityBookclub extends AppCompatActivity {
         eventsList = FirebaseDatabase.getInstance().getReference("events");
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
+
+        //FOR MAIN
+        mAuth = FirebaseAuth.getInstance();
+
+        btnSignout= findViewById(R.id.btnSignout);
 
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +99,43 @@ public class ActivityBookclub extends AppCompatActivity {
         ActivityBookClubEventDTO clubEventDTO = new ActivityBookClubEventDTO(id, eventName, eventLocation, eventDescription);
         eventsList.child(id).setValue(clubEventDTO);
         Toast.makeText(this, "Event Created", Toast.LENGTH_SHORT).show();
+    }
+
+    //FOR MAIN
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(currentUser == null){
+            sendToLogin();
+        }
+    }
+
+    //FOR MAIN
+    private void logout(){
+        //mAuth.signOut();
+        sendToLogin();
+    }
+
+    //FOR MAIN
+    private void sendToLogin(){
+        Intent intent = new Intent(ActivityBookclub.this, ActivityLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void signOut(View view){
+        mAuth.signOut();
+        sendToLogin();
+    }
+
+    public void sendToProfile(View view){
+        Intent intent = new Intent(ActivityBookclub.this, ActivityProfile.class);
+        startActivity(intent);
+        finish();
+
     }
 
 
