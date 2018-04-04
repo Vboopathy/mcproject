@@ -15,6 +15,39 @@
       },
       "oauth_client": [
         {
+          "client_id": "382916618376-esmuphmmkde4i0kjs9bpmcoo0dm2evjc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "d90c2c5ca83e77daa3cde25e9df4850965c540c2"
+          }
+        },
+        {
+          "client_id": "382916618376-2r4gn3ummb2j087q0lj916jjeekv68h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "7b6630994a4006718966a56fe2f64afdfbc63e05"
+          }
+        },
+        {
+          "client_id": "382916618376-dgn0a2nhflvjn38d716skt2e3c4q8dr5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "69edf110f50926844736ec2d9348ff8fbadb04f7"
+          }
+        },
+        {
+          "client_id": "382916618376-bajc273iejfo4is00i3djkd1sbbc03rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ebookclub",
+            "certificate_hash": "23692e6b6a68933a674ac328c162ff34cf8d549f"
+          }
+        },
+        {
+
           "client_id": "382916618376-5bafrif9pl093ksrejqp4ngi6urlfj91.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -24,6 +57,52 @@
         },
         {
           "client_id": "382916618376-hfvipaad64rh1hhdavnbfgftis9blh7h.apps.googleusercontent.com",
+
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhGGprDPbFELKltVbhatrMLqCDYrBuHsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382916618376-hfvipaad64rh1hhdavnbfgftis9blh7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382916618376:android:a450a13d2a3f98b8",
+        "android_client_info": {
+          "package_name": "com.example.narmada.login_ebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382916618376-79ars5te5qfuo8q0k8n452m85ab7hpjb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.narmada.login_ebook",
+            "certificate_hash": "23692e6b6a68933a674ac328c162ff34cf8d549f"
+          }
+        },
+        {
+          "client_id": "382916618376-hfvipaad64rh1hhdavnbfgftis9blh7h.apps.googleusercontent.com",
+
           "client_type": 3
         }
       ],

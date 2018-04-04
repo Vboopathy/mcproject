@@ -22,6 +22,7 @@ public class ActivityBookclub extends AppCompatActivity {
     public Button done;
     public Button displayEvents;
     public LinearLayout createEventLayout;
+
     public EditText editTextName, editTextLocation, editTextDesc;
 
     String eventName = "";
@@ -48,7 +49,6 @@ public class ActivityBookclub extends AppCompatActivity {
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
 
-
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +71,7 @@ public class ActivityBookclub extends AppCompatActivity {
                 addEvent();
             }
         });
+
         displayEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,4 +90,6 @@ public class ActivityBookclub extends AppCompatActivity {
         eventsList.child(id).setValue(clubEventDTO);
         Toast.makeText(this, "Event Created", Toast.LENGTH_SHORT).show();
     }
+
+
 }

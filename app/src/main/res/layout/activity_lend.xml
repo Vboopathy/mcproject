@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/GetPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="56dp"
+        android:layout_toEndOf="@+id/PlaceAddress"
+        android:text="Lending Location!" />
+
+    <TextView
+        android:id="@+id/PlaceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/PNText"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:text="Place Name" />
+
+    <TextView
+        android:id="@+id/PAText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/PlaceName"
+        android:layout_marginTop="19dp"
+        android:text="Place Address" />
+
+    <TextView
+        android:id="@+id/PlaceAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/PAText"
+        android:text="Place Address" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/lend" />
+
+    <TextView
+        android:id="@+id/PNText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Place Name " />
+
+</RelativeLayout>
