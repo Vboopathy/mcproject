@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ebookclub.ActivityEventsDisplay"
+    android:background="@drawable/bookevent1">
+
+    <TextView
+        android:id="@+id/lblEventsDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="List of Book Club Events"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <ListView
+        android:id="@+id/lvEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblEventsDisplay"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="2sp"
+        android:layout_marginEnd="2sp"
+        android:layout_centerHorizontal="true"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
+
+
+</RelativeLayout>

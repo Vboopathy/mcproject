@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#fff</color>
+    <color name="colorWhite">#fffde7</color>
     <color name="place_autocomplete_search_text">#ccc</color>
     <color name="Black">#000000</color>
 

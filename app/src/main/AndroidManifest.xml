@@ -24,6 +24,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+       
+        <activity android:name=".ActivityBookclub">
+
+        </activity>
+        <activity android:name=".ActivityGenreDrama" />
+
 
         <activity android:name=".ActivityLend">
 
@@ -65,16 +71,22 @@
             android:name=".MapsActivity"
             android:label="Map"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ActivityEventsDisplay"
+            android:label="Go Back"
+            android:parentActivityName=".ActivityBookclub"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".BorrowBookActivity"/>
         <activity android:name=".ActivityRegister" />
         <activity android:name=".ActivityProfile" />
         <activity android:name=".FictionInfoActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        />
         <activity android:name=".ActivityGenreRomance" />
         <activity android:name=".RomanceInfoActivity" />
         <activity android:name=".HorrorInfoActivity" />
@@ -82,6 +94,7 @@
         <activity android:name=".ActivityGenreHorror" />
         <activity android:name=".ActivityGenreSelfhelp" />
         <activity android:name=".ActivityEditProfile"></activity>
+
     </application>
 
 </manifest>
