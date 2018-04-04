@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,8 +21,8 @@ public class RomanceListAdapter extends ArrayAdapter{
     private Activity context;
     private List<romance> romanceList;
 
-    public RomanceListAdapter(Activity context,List<fiction> fictionList){
-        super(context, R.layout.genre_list, fictionList);
+    public RomanceListAdapter(Activity context, ArrayList<romance> romanceList){
+        super(context, R.layout.genre_list, romanceList);
         this.context = context;
         this.romanceList = romanceList;
 

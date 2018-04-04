@@ -1,5 +1,6 @@
 package com.example.android.ebookclub;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,21 +11,29 @@ import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+
 
 
 
 
 public class FictionInfoActivity extends AppCompatActivity {
-
-    RatingBar mRatingBar;
+  
+  RatingBar mRatingBar;
     TextView mRatingScale;
     EditText mReview;
     Button mSendFeedback;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self_help_info);
+
+        setContentView(R.layout.activity_fiction_info);
 
         mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
         mRatingScale = (TextView) findViewById(R.id.txt_RatingScale);
@@ -71,4 +80,9 @@ public class FictionInfoActivity extends AppCompatActivity {
         });
 
     }
-}
+
+
+
+    }
+
+

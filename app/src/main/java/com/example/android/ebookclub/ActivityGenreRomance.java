@@ -21,7 +21,7 @@ public class ActivityGenreRomance extends AppCompatActivity {
 
 
     DatabaseReference mDatabaseRefromance;
-    ArrayList<fiction> romancelist;
+    ArrayList<romance> romancelist;
     ListView listViewromance;
     ArrayList<String> romanceClickedInfoList;
 
@@ -35,12 +35,12 @@ public class ActivityGenreRomance extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 romancelist.clear();
                 for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
-                    fiction rom = courseSnapshot.getValue(fiction.class);
+                    romance rom = courseSnapshot.getValue(romance.class);
                     romancelist.add(rom);
                     Log.e("romanceSnapshot: ", rom.toString());
 
                 }
-                FictionListAdapter adapter = new FictionListAdapter(ActivityGenreRomance.this, romancelist);
+                RomanceListAdapter adapter = new RomanceListAdapter(ActivityGenreRomance.this, romancelist);
                 listViewromance.setAdapter(adapter);
 
             }
@@ -76,7 +76,7 @@ public class ActivityGenreRomance extends AppCompatActivity {
                 s = "" + romanceClickedInfoList;
                 Log.e("romanceclicked", s);
 
-                Intent intent = new Intent(getApplicationContext(), FictionInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RomanceInfoActivity.class);
                 intent.putExtra("ExtraMsg", romanceClickedInfoList);
                 startActivity(intent);
             }

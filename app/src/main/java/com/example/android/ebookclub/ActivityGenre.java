@@ -6,11 +6,14 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityGenre extends AppCompatActivity {
 
@@ -18,6 +21,7 @@ public class ActivityGenre extends AppCompatActivity {
     private ActionBarDrawerToggle mToggle;
 
     FirebaseAuth AuthRef;
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -26,6 +30,7 @@ public class ActivityGenre extends AppCompatActivity {
         setContentView(R.layout.activity_genre);
 
         AuthRef = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -47,26 +52,31 @@ public class ActivityGenre extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
 
-//                            case R.id.nav_lend:
-//                                callIntent(ActivityPlacePicker.class);
-//                                break;
-////
-//                            case R.id.nav_borrow:
-//                                callIntent(CourseList.class);
-//                                break;
-//
+
+                            case R.id.nav_lend:
+                                callIntent(ActivityLend.class);
+                                break;
+
+                            case R.id.nav_borrow:
+                                callIntent(BorrowBookActivity.class);
+                                break;
+
+
                             case R.id.nav_events:
                                 callIntent(ActivityBookclub.class);
                                 break;
 
+                            case R.id.nav_profile:
+                                callIntent(ActivityProfile.class);
+                                break;
 
-//                            case R.id.nav_logout:
-//                                AuthRef.signOut();
+                            case R.id.nav_logout:
+                                  signOut();
+                                  break;
 //                                if(FirebaseAuth.getInstance().getCurrentUser() == null) {
 //                                    System.out.println("Sign out successful");
 //                                }
-////                                callIntent(MainActivity.class);
-//                                break;
+
 //
                         }
 //
@@ -92,8 +102,10 @@ public class ActivityGenre extends AppCompatActivity {
         });
 
 
-        buttonromance.setOnClickListener(new View.OnClickListener() {
 
+        buttonromance.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityGenre.this, ActivityGenreRomance.class);
@@ -101,19 +113,18 @@ public class ActivityGenre extends AppCompatActivity {
             }
         });
 
-        buttonhorror.setOnClickListener(new View.OnClickListener()
 
-        {
+        buttonhorror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityGenre.this, ActivityGenreHorror.class);
+
                 startActivity(intent);
             }
         });
 
-        buttonselfhelp.setOnClickListener(new View.OnClickListener()
 
-        {
+        buttonselfhelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityGenre.this, ActivityGenreSelfhelp.class);
@@ -121,6 +132,11 @@ public class ActivityGenre extends AppCompatActivity {
             }
         });
     }
+
+
+        
+
+        
 
 
         @Override
@@ -142,6 +158,31 @@ public class ActivityGenre extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), className);
         startActivity(intent);
     }
+
+
+    private void sendToLogin(){
+        Intent intent = new Intent(ActivityGenre.this, ActivityLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void signOut(){
+        AuthRef.signOut();
+        sendToLogin();
+    }
+
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(currentUser == null){
+            sendToLogin();
+        }
+    }
+
 }
 
 

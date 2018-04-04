@@ -77,7 +77,7 @@ public class ActivityGenreHorror extends AppCompatActivity {
                 s = "" + horrorClickedInfoList;
                 Log.e("horrorclicked", s);
 
-                Intent intent = new Intent(getApplicationContext(), FictionInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HorrorInfoActivity.class);
                 intent.putExtra("ExtraMsg", horrorClickedInfoList);
                 startActivity(intent);
             }

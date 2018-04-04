@@ -39,18 +39,9 @@ public class ActivityLogin extends AppCompatActivity {
 
     }
 
-
     public void onClickLogin(View view){
         String textEmail = loginEmail.getText().toString();
         String textPassword = loginPassword.getText().toString();
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
-        System.out.println(textEmail);
-        System.out.println(textPassword);
         if (!TextUtils.isEmpty(textEmail) && !TextUtils.isEmpty(textPassword)) {
             mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -68,7 +59,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     void sendToMain() {
-        Intent mainIntent = new Intent(ActivityLogin.this, ActivityBookclub.class);
+        Intent mainIntent = new Intent(ActivityLogin.this, ActivityGenre.class);
         startActivity(mainIntent);
         finish();
     }
@@ -80,20 +71,15 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (currentUser != null){
+        if (currentUser != null) {
             sendToMain();
         }
+    }
 
     }
 
-
-
-
-
-
-}

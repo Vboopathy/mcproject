@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordRegister2"
         android:layout_centerHorizontal="true"
+        android:onClick="registerUser"
         android:text="Create New Account" />
 
     <Button
