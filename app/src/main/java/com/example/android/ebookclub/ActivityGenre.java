@@ -66,7 +66,7 @@ public class ActivityGenre extends AppCompatActivity {
                                 break;
 
                             case R.id.nav_profile:
-                                sendToProfile();
+                                callIntent(ActivityProfile.class);
                                 break;
 
                             case R.id.nav_logout:
@@ -75,8 +75,7 @@ public class ActivityGenre extends AppCompatActivity {
 //                                if(FirebaseAuth.getInstance().getCurrentUser() == null) {
 //                                    System.out.println("Sign out successful");
 //                                }
-////                                callIntent(MainActivity.class);
-//                                break;
+
 //
                         }
 //
@@ -162,13 +161,6 @@ public class ActivityGenre extends AppCompatActivity {
         sendToLogin();
     }
 
-
-    public void sendToProfile(){
-        Intent intent = new Intent(ActivityGenre.this, ActivityProfile.class);
-        startActivity(intent);
-        finish();
-
-    }
 
     @Override
     protected void onStart(){

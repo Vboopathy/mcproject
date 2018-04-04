@@ -5,6 +5,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 public class ActivityEditProfile extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    private TextView name;
+    private EditText firstName;
     private TextView city;
     private ImageView profilePic;
     private TextView bio;
@@ -44,11 +45,6 @@ public class ActivityEditProfile extends AppCompatActivity {
         }
 
     }
-
-
-
-
-
 
 
 }
