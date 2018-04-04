@@ -49,8 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/lend" />
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/PNText"
