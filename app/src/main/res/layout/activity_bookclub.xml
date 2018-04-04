@@ -98,22 +98,7 @@
         tools:layout_editor_absoluteX="137dp"
         tools:layout_editor_absoluteY="418dp" />
 
-    <Button
-        android:id="@+id/btnSignout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:onClick="signOut"
-        android:text="S/O" />
 
-    <Button
-        android:id="@+id/toProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="sendToProfile"
-        android:text="to_profile" />
 
 
 </RelativeLayout>

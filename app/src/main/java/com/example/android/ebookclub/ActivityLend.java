@@ -36,8 +36,10 @@ import java.util.Locale;
 
 public class ActivityLend extends AppCompatActivity {
 
+    //Database reference to connect to firebase
     private DatabaseReference mDatabase;
 
+    //Creating Variables
     private EditText Name;
     private EditText book;
     private EditText Description;
@@ -60,8 +62,10 @@ public class ActivityLend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lend_new);
 
+        //Adding the reference to "lend" node in firebase
         mDatabase = FirebaseDatabase.getInstance().getReference("lend");
 
+        //Initializing the element variables
         PlaceName = (TextView) findViewById(R.id.PlaceName);
         PlaceAddress = (TextView) findViewById(R.id.PlaceAddress);
         GetPlace = (Button) findViewById(R.id.GetPlace);
@@ -75,6 +79,7 @@ public class ActivityLend extends AppCompatActivity {
         toTime = (EditText) findViewById(R.id.toTime);
         Date = (EditText) findViewById(R.id.Date);
 
+        //For the lend details to be saved
         SaveDetails.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -83,6 +88,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Button Action to get Lending location
         GetPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +105,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Time picker for from time
         FromTime.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -121,6 +128,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Time picker for to Time
         toTime.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -144,6 +152,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Date picker variables
         final DatePickerDialog.OnDateSetListener date = new
                 DatePickerDialog.OnDateSetListener() {
 
@@ -159,6 +168,7 @@ public class ActivityLend extends AppCompatActivity {
 
                 };
 
+        //Date picker actions
         Date.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
@@ -181,6 +191,7 @@ public class ActivityLend extends AppCompatActivity {
         Date.setText(sdf.format(myCalendar.getTime()));
     }
 
+    //Saving info to firebase
     private void saveInfo() {
 
         String PlaceAddressText = PlaceAddress.getText().toString();
@@ -209,7 +220,7 @@ public class ActivityLend extends AppCompatActivity {
         }
     }
 
-
+    //Requesting permission to location
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -227,6 +238,8 @@ public class ActivityLend extends AppCompatActivity {
         }
 
     }
+
+    //Place picker code for lending location
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
