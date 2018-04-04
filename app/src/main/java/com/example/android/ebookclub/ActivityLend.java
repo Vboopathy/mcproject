@@ -205,10 +205,18 @@ public class ActivityLend extends AppCompatActivity {
         String DateText = Date.getText().toString();
         String EmailText = email.getText().toString();
 
-        String id = mDatabase.push().getKey();
-        LendInformation Lend = new LendInformation(id, NameText, bookText, DescriptionText, EmailText, PhoneNumberText, PlaceNameText, PlaceAddressText, FromTimeText, toTimeText, DateText );
-        mDatabase.child(id).setValue(Lend);
-        Toast.makeText(getApplicationContext(), "Information Saved", Toast.LENGTH_LONG).show();
+        if(PlaceAddressText.equals("") || PlaceNameText.equals("") || NameText.equals("") || bookText.equals("") || DescriptionText.equals("") || FromTimeText.equals("") || toTimeText.equals("") || DateText.equals("") || EmailText.equals(""))
+        {
+            Toast.makeText(getApplicationContext(), "Please Enter all mandatory fields", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            String id = mDatabase.push().getKey();
+            LendInformation Lend = new LendInformation(id, NameText, bookText, DescriptionText, EmailText, PhoneNumberText, PlaceNameText, PlaceAddressText, FromTimeText, toTimeText, DateText );
+            mDatabase.child(id).setValue(Lend);
+            Toast.makeText(getApplicationContext(), "Information Saved", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
