@@ -58,7 +58,7 @@ public class ActivityGenre extends AppCompatActivity {
                                 break;
 
                             case R.id.nav_borrow:
-                                //callIntent(.class);
+                                callIntent(BorrowBookActivity.class);
                                 break;
 
                             case R.id.nav_events:
