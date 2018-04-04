@@ -61,12 +61,14 @@
             android:layout_height="wrap_content"
             android:hint="Bio"
             android:layout_below="@id/cityEditText"/>
+
         <Button
             android:id="@+id/btnSaveChanges"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Changes"
-            android:layout_below="@id/bioEditText"/>
+            android:layout_below="@id/bioEditText"
+            android:onClick="saveProfile"
+            android:text="Save Changes" />
 
 
 

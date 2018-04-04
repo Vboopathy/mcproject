@@ -73,8 +73,6 @@ public class ActivityEditProfile extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 //Set values in Profile to those in database.
-
-
                 name.setHint(dataSnapshot.child("name").getValue().toString());
                 bio.setHint(dataSnapshot.child("bio").getValue().toString());
                 city.setHint(dataSnapshot.child("city").getValue().toString());
@@ -89,7 +87,6 @@ public class ActivityEditProfile extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
 
             }
 
@@ -114,7 +111,67 @@ public class ActivityEditProfile extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void saveProfile(View view){
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        userTable.orderByChild("email").equalTo(currentUser.getEmail()).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                //Set values in Profile to those in database.
+
+                if(!isEditTextEmpty(name)){
+                    System.out.println(name.getText().toString());
+                    dataSnapshot.getRef().child("name").setValue(name.getText().toString());}
+                if(!isEditTextEmpty(bio)){
+                    dataSnapshot.getRef().child("bio").setValue(bio.getText().toString());}
+                if(!isEditTextEmpty(city)){
+                    dataSnapshot.getRef().child("city").setValue(city.getText().toString());}
+                sendToMain();
+            }
+
+
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
+
+
+    private void sendToMain(){
+        Intent intent = new Intent(ActivityEditProfile.this, ActivityGenre.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    private boolean isEditTextEmpty(EditText editText) {
+        if (editText.getText().toString().trim().length() > 0)
+            return false;
+        return true;
+    }
+
+
+
 
 }
