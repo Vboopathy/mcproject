@@ -1,5 +1,6 @@
 package com.example.android.ebookclub;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,6 +36,8 @@ public class ActivityEditProfile extends AppCompatActivity {
     private ImageView profilePic;
     private String imageUrl;
     private Double rating;
+    Context context;
+
 
     private DatabaseReference userTable;
     private FirebaseAuth mAuth;
@@ -48,6 +52,7 @@ public class ActivityEditProfile extends AppCompatActivity {
         city = findViewById(R.id.cityEditText);
         bio = findViewById(R.id.bioEditText);
         profilePic = findViewById(R.id.editPicView);
+        Context context = getApplicationContext();
 
 
         //get table from firebase
@@ -129,11 +134,11 @@ public class ActivityEditProfile extends AppCompatActivity {
                     dataSnapshot.getRef().child("bio").setValue(bio.getText().toString());}
                 if(!isEditTextEmpty(city)){
                     dataSnapshot.getRef().child("city").setValue(city.getText().toString());}
+                //int duration = Toast.LENGTH_SHORT;
+                //Toast toast = Toast.makeText(context, "Saved Profile.", duration);
+                //toast.show();
                 sendToMain();
             }
-
-
-
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
@@ -157,9 +162,8 @@ public class ActivityEditProfile extends AppCompatActivity {
 
     }
 
-
     private void sendToMain(){
-        Intent intent = new Intent(ActivityEditProfile.this, ActivityGenre.class);
+        Intent intent = new Intent(ActivityEditProfile.this, ActivityProfile.class);
         startActivity(intent);
         finish();
     }
