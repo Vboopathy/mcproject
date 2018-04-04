@@ -38,6 +38,7 @@ public class ActivityProfile extends AppCompatActivity {
     /*  User Rating Calculation
     def newAvg(oldAvg, totalPoints, newValue):
 	       return ((oldAvg*totalPoints)+newValue)/(totalPoints+1)
+	       this comment is just for push
      */
 
 
