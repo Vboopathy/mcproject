@@ -28,6 +28,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -51,7 +52,7 @@ public class ActivityLend extends AppCompatActivity {
     private EditText toTime;
     private Button GetPlace;
     private Button SaveDetails;
-    private EditText Date;
+    private EditText etDate;
     public static final int MY_PERMISSION_FINE_LOCATION = 101;
     int PLACE_PICKER_REQUEST = 1;
     final Calendar myCalendar = Calendar.getInstance();
@@ -77,7 +78,7 @@ public class ActivityLend extends AppCompatActivity {
         PhoneNumber = (EditText) findViewById(R.id.PhoneNumber);
         FromTime = (EditText) findViewById(R.id.fromTime);
         toTime = (EditText) findViewById(R.id.toTime);
-        Date = (EditText) findViewById(R.id.Date);
+        etDate = (EditText) findViewById(R.id.Date);
 
         //For the lend details to be saved
         SaveDetails.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +145,7 @@ public class ActivityLend extends AppCompatActivity {
                                 toTime.setText(selectedHour + ":" + selectedMinute);
                             }
                         }, hour, minute, true);
-                        mTimePicker.setTitle("Select Time");
+                        mTimePicker.setTitle("Select From Time");
                         mTimePicker.show();
 
                 }
@@ -169,7 +170,7 @@ public class ActivityLend extends AppCompatActivity {
                 };
 
         //Date picker actions
-        Date.setOnTouchListener(new View.OnTouchListener() {
+        etDate.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -187,7 +188,7 @@ public class ActivityLend extends AppCompatActivity {
 
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        Date.setText(sdf.format(myCalendar.getTime()));
+        etDate.setText(sdf.format(myCalendar.getTime()));
     }
 
     //Saving info to firebase
@@ -201,10 +202,10 @@ public class ActivityLend extends AppCompatActivity {
         String PhoneNumberText = PhoneNumber.getText().toString();
         String FromTimeText = FromTime.getText().toString();
         String toTimeText = toTime.getText().toString();
-        String DateText = Date.getText().toString();
+        String DateText = etDate.getText().toString();
         String EmailText = email.getText().toString();
 
-        if(PlaceAddressText.equals("") || PlaceNameText.equals("") || NameText.equals("") || bookText.equals("") || DescriptionText.equals("") || FromTimeText.equals("") || toTimeText.equals("") || DateText.equals("") || EmailText.equals(""))
+        if(PlaceAddressText.equals("") || PlaceNameText.equals("") || NameText.equals("") || bookText.equals("") ||  FromTimeText.equals("") || toTimeText.equals("") || DateText.equals("") || EmailText.equals(""))
         {
             Toast.makeText(getApplicationContext(), "Please Enter all mandatory fields", Toast.LENGTH_LONG).show();
         }
