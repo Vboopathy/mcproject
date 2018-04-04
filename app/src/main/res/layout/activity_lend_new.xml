@@ -41,7 +41,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textWebEmailAddress"
-        android:hint="Email" />
+        android:hint="Email*" />
 
     <EditText
         android:id="@+id/PhoneNumber"
@@ -90,7 +90,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="date"
-        android:hint="Date flexible to be borrowed" />
+        android:hint="Date flexible to be borrowed*" />
 
     <EditText
         android:id="@+id/fromTime"
@@ -99,7 +99,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="time"
-        android:hint="Available from (eg.21.30)" />
+        android:hint="Available from (eg.21.30)*" />
 
     <EditText
         android:id="@+id/toTime"
@@ -108,7 +108,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="time"
-        android:hint="Available till (eg. 22.30)" />
+        android:hint="Available till (eg. 22.30)*" />
 
     <Button
         android:id="@+id/SaveDetails"
