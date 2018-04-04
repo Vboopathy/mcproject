@@ -120,7 +120,6 @@ public class ActivityProfile extends AppCompatActivity {
     public void sentToEditProfile(View view){
         Intent intent = new Intent(ActivityProfile.this, ActivityEditProfile.class);
         startActivity(intent);
-        finish();
     }
 
 }
