@@ -50,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/lend" />
+        app:srcCompat="@drawable/lendnew" />
 
     <TextView
         android:id="@+id/PNText"
