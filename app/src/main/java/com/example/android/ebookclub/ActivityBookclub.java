@@ -69,14 +69,25 @@ public class ActivityBookclub extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                eventName = editTextName.getText().toString();
+                eventLocation = editTextLocation.getText().toString();
+                eventDescription = editTextDesc.getText().toString();
+                if(eventName.equals(null) || eventName.equals("")){
+                    editTextName.setError("Please enter the event name");
+                } else if(eventLocation.equals(null) || eventLocation.equals("")){
+                    editTextLocation.setError("Please enter the event location");
+                } else if(eventDescription.equals(null) || eventDescription.equals("")){
+                    editTextDesc.setError("Please enter the event description");
+                } else {
                 createEventLayout.setVisibility(createEventLayout.INVISIBLE);
                 createEvent.setVisibility(createEvent.VISIBLE);
                 displayEvents.setVisibility(displayEvents.VISIBLE);
                 done.setVisibility(done.INVISIBLE);
-                eventName += editTextName.getText().toString();
-                eventLocation += editTextLocation.getText().toString();
-                eventDescription += editTextDesc.getText().toString();
-                addEvent();
+
+
+
+                    addEvent();
+                }
             }
         });
 
