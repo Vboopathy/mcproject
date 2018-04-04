@@ -71,17 +71,15 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (currentUser != null){
+        if (currentUser != null) {
             sendToMain();
         }
+    }
 
     }
 
-
-
-}

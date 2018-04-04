@@ -25,7 +25,7 @@ public class ActivityRegister extends AppCompatActivity {
     private EditText passwordConfirmationText;
     private Button createAccount;
 
- //TODO: add logoout functionality
+    //TODO: add logoout functionality
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class ActivityRegister extends AppCompatActivity {
 
 
 
-// todo password1 == password2  or password1 != password2
+    // todo password1 == password2  or password1 != password2
     public void registerUser(View view){
         String email= emailText.getText().toString();
         String password = passwordText.getText().toString();
@@ -87,8 +87,6 @@ public class ActivityRegister extends AppCompatActivity {
 
 
     }
-
-
 }
 
 
