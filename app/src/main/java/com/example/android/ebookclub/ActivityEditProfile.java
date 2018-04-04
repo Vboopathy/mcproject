@@ -134,12 +134,11 @@ public class ActivityEditProfile extends AppCompatActivity {
                     dataSnapshot.getRef().child("bio").setValue(bio.getText().toString());}
                 if(!isEditTextEmpty(city)){
                     dataSnapshot.getRef().child("city").setValue(city.getText().toString());}
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, "Saved Profile.", duration);
-                toast.show();
+                //int duration = Toast.LENGTH_SHORT;
+                //Toast toast = Toast.makeText(context, "Saved Profile.", duration);
+                //toast.show();
                 sendToMain();
             }
-//comemnt just for github push.
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
@@ -163,9 +162,8 @@ public class ActivityEditProfile extends AppCompatActivity {
 
     }
 
-
     private void sendToMain(){
-        Intent intent = new Intent(ActivityEditProfile.this, ActivityGenre.class);
+        Intent intent = new Intent(ActivityEditProfile.this, ActivityProfile.class);
         startActivity(intent);
         finish();
     }
