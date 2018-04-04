@@ -52,7 +52,9 @@ public class ActivityEditProfile extends AppCompatActivity {
         city = findViewById(R.id.cityEditText);
         bio = findViewById(R.id.bioEditText);
         profilePic = findViewById(R.id.editPicView);
+
         Context context = getApplicationContext();
+
 
 
         //get table from firebase
@@ -78,6 +80,7 @@ public class ActivityEditProfile extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 //Set values in Profile to those in database.
+
                 name.setHint(dataSnapshot.child("name").getValue().toString());
                 bio.setHint(dataSnapshot.child("bio").getValue().toString());
                 city.setHint(dataSnapshot.child("city").getValue().toString());
@@ -113,8 +116,10 @@ public class ActivityEditProfile extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+
             }
         });
+
 
     }
 
@@ -177,5 +182,30 @@ public class ActivityEditProfile extends AppCompatActivity {
 
 
 
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
 
 }

@@ -108,7 +108,7 @@ public class BorrowBookActivity extends AppCompatActivity {
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                     String bookID = snapshot.getKey();
                     String bookNameDb = "Book Name :" + snapshot.child("book").getValue(String.class);
-                    String bookPlaceAddress = "Address :" + snapshot.child("placeAddress").getValue(String.class);
+                    String bookPlaceAddress =  snapshot.child("placeAddress").getValue(String.class);
                     String bookPlaceName = "Place :" + snapshot.child("placeName").getValue(String.class);
                     String bookDescription = "Comments :" + snapshot.child("description").getValue(String.class);
                     String bookLendingDate = "Date :" + snapshot.child("date").getValue(String.class);
