@@ -7,139 +7,68 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class FictionInfoActivity extends AppCompatActivity {
 
-    EditText editText;
-    Button submit;
-    DatabaseReference rootRef, demoRef_ad, demoRef_hp;
-    ArrayList<String> reviews;
-    FictionReviewAdapter adapter;
-    ListView listViewficreviews;
-    String builder = "";
-    final String[] review = {""};
-
-
+    RatingBar mRatingBar;
+    TextView mRatingScale;
+    EditText mReview;
+    Button mSendFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fiction_info);
+        setContentView(R.layout.activity_self_help_info);
 
-        editText = (EditText) findViewById(R.id.edt_review);
-        submit = (Button) findViewById(R.id.btn_review);
-        listViewficreviews = findViewById(R.id.listViewfic_review);
-        rootRef = FirebaseDatabase.getInstance().getReference("fiction").child("Angles and Demons");
+        mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
+        mRatingScale = (TextView) findViewById(R.id.txt_RatingScale);
+        mReview = (EditText) findViewById(R.id.edt_review);
+        mSendFeedback = (Button) findViewById(R.id.btn_Reviewd);
 
-        //database reference pointing to root of database
-
-        reviews = new ArrayList<>();
-
-        //database reference pointing to demo node
-
-//                demoRef_hp = rootRef.child("Harry Potter").child("review");
-
-
-        // vidhya
-
-
-        submit.setOnClickListener(new View.OnClickListener() {
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
-            public void onClick(View v) {
-                // Map<String, Object> update = new HashMap<>();
-
-
-                rootRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        // reviews.clear();
-                        builder = String.valueOf(dataSnapshot.child("review").getValue());
-//                for (DataSnapshot reviewSnapshot : dataSnapshot.getChildren()) {
-//                        builder = String.valueOf(reviewSnapshot.child("review").getValue());
-//                }
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
-                String value = editText.getText().toString();
-                // update.put("review", value);
-                //push creates a unique id in database
-                // rootRef.updateChildren(update);
-                if (builder.equals(""))
-                    builder = value;
-                else
-                    builder += "," + value;
-                Map<String, Object> check = new HashMap<>();
-                check.put("review", builder);
-
-                // ReviewDTO reviewDTO = new ReviewDTO(builder);
-                rootRef.updateChildren(check);
-                builder = "";
-                Toast.makeText(getApplicationContext(), "Reviewed!",
-                        Toast.LENGTH_LONG).show();
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                mRatingScale.setText(String.valueOf(v));
+                switch ((int) ratingBar.getRating()) {
+                    case 1:
+                        mRatingScale.setText("Very bad");
+                        break;
+                    case 2:
+                        mRatingScale.setText("Not satisfied");
+                        break;
+                    case 3:
+                        mRatingScale.setText("Good");
+                        break;
+                    case 4:
+                        mRatingScale.setText("Great, worth reading");
+                        break;
+                    case 5:
+                        mRatingScale.setText("Awesome! I love it");
+                        break;
+                    default:
+                        mRatingScale.setText("");
+                }
             }
         });
 
-        //vidhya
+        mSendFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mReview.getText().toString().isEmpty()) {
+                    Toast.makeText(FictionInfoActivity.this, "Please review the book", Toast.LENGTH_LONG).show();
+                } else {
+                    mReview.setText("");
+                    mRatingBar.setRating(0);
+                    Toast.makeText(FictionInfoActivity.this, "Thank you for feedback", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
-
-        @Override
-        /**
-         * Dictates what's to occur when the activity starts
-         */
-        protected void onStart() {
-            super.onStart();
-
-            rootRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    // reviews.clear();
-                    for (DataSnapshot reviewSnapshot : dataSnapshot.getChildren()) {
-                        review[0] = String.valueOf(reviewSnapshot.child("review").getValue());
-                    }
-
-                    String[] value = review[0].split(",");
-                    for (int j = 0; j < value.length; j++) {
-                        reviews.add(value[j]);
-
-                    }
-
-                    if (!reviews.isEmpty()) {
-                        Log.e("Msg", "Inside if");
-                        adapter = new FictionReviewAdapter(FictionInfoActivity.this, reviews);
-                        listViewficreviews.setAdapter(adapter);
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-        }
 }
-
-
-
-
-
-
