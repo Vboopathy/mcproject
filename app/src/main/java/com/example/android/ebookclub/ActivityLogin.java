@@ -59,7 +59,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     void sendToMain() {
-        Intent mainIntent = new Intent(ActivityLogin.this, ActivityBookclub.class);
+        Intent mainIntent = new Intent(ActivityLogin.this, ActivityGenre.class);
         startActivity(mainIntent);
         finish();
     }
@@ -71,17 +71,15 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (currentUser != null){
+        if (currentUser != null) {
             sendToMain();
         }
+    }
 
     }
 
-
-
-}
