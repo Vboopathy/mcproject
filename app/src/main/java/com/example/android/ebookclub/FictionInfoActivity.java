@@ -1,12 +1,12 @@
 package com.example.android.ebookclub;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,89 +20,126 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class FictionInfoActivity extends AppCompatActivity {
 
-    TextView mdescription;
-    EditText review;
-    Button btn_review;
-
-    FirebaseDatabase database;
-    DatabaseReference ref_review;
-    DatabaseReference ref_description;
-
-
-    Map<String, String> bookInfoMap = new HashMap<>();
+    EditText editText;
+    Button submit;
+    DatabaseReference rootRef, demoRef_ad, demoRef_hp;
+    ArrayList<String> reviews;
+    FictionReviewAdapter adapter;
+    ListView listViewficreviews;
+    String builder = "";
+    final String[] review = {""};
 
 
-    fiction  fic_tion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fiction_info);
 
-        review = findViewById(R.id.edt_review);
-        mdescription = findViewById(R.id.description);
+        editText = (EditText) findViewById(R.id.edt_review);
+        submit = (Button) findViewById(R.id.btn_review);
+        listViewficreviews = findViewById(R.id.listViewfic_review);
+        rootRef = FirebaseDatabase.getInstance().getReference("fiction").child("Angles and Demons");
 
-        Intent intent = getIntent();
-        ArrayList<String> message = intent.getStringArrayListExtra("ExtraMsg");
-        if(message!=null) {
+        //database reference pointing to root of database
 
-            mdescription.setText(getString(Integer.parseInt(R.id.description + message.get(1))));
+        reviews = new ArrayList<>();
 
-        }
+        //database reference pointing to demo node
 
-        ref_review = database.getReference( "review");
-        ref_description = database.getReference("fiction");
+//                demoRef_hp = rootRef.child("Harry Potter").child("review");
 
-        fic_tion = new fiction();
 
+        // vidhya
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Map<String, Object> update = new HashMap<>();
+
+
+                rootRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // reviews.clear();
+                        builder = String.valueOf(dataSnapshot.child("review").getValue());
+//                for (DataSnapshot reviewSnapshot : dataSnapshot.getChildren()) {
+//                        builder = String.valueOf(reviewSnapshot.child("review").getValue());
+//                }
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
+                String value = editText.getText().toString();
+                // update.put("review", value);
+                //push creates a unique id in database
+                // rootRef.updateChildren(update);
+                if (builder.equals(""))
+                    builder = value;
+                else
+                    builder += "," + value;
+                Map<String, Object> check = new HashMap<>();
+                check.put("review", builder);
+
+                // ReviewDTO reviewDTO = new ReviewDTO(builder);
+                rootRef.updateChildren(check);
+                builder = "";
+                Toast.makeText(getApplicationContext(), "Reviewed!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        //vidhya
     }
 
+        @Override
+        /**
+         * Dictates what's to occur when the activity starts
+         */
+        protected void onStart() {
+            super.onStart();
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        ref_description.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                bookInfoMap.clear();
-                for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()){
-                    String descripInfo= String.valueOf(courseSnapshot.child("description").getValue());
-                    String authorname = String.valueOf(courseSnapshot.child("author").getValue());
-                    bookInfoMap.put(descripInfo, authorname);
+            rootRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // reviews.clear();
+                    for (DataSnapshot reviewSnapshot : dataSnapshot.getChildren()) {
+                        review[0] = String.valueOf(reviewSnapshot.child("review").getValue());
+                    }
+
+                    String[] value = review[0].split(",");
+                    for (int j = 0; j < value.length; j++) {
+                        reviews.add(value[j]);
+
+                    }
+
+                    if (!reviews.isEmpty()) {
+                        Log.e("Msg", "Inside if");
+                        adapter = new FictionReviewAdapter(FictionInfoActivity.this, reviews);
+                        listViewficreviews.setAdapter(adapter);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
                 }
-                Log.e("courses", "" +bookInfoMap);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-
-    private void getValues()
-    {
-        fic_tion.setReview(review.getText().toString());
-    }
-
-    public void btn_review(View view)  {
-        ref_review.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                getValues();
-                ref_review.child("review01").setValue(fic_tion);
-                Toast.makeText(FictionInfoActivity.this, "Review added", Toast.LENGTH_SHORT);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
+            });
+        }
 }
+
+
+
+
+
+
