@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.ebookclub.ActivityBookclub"
-    android:background="@drawable/bookevent1">
+    android:background="@drawable/eventimage">
 
     <Button
          android:id="@+id/createBtn"
@@ -58,8 +58,9 @@
             android:layout_below="@+id/createBtn"
             android:layout_marginEnd="103dp"
             android:ems="10"
+            android:hint="Enter Event Name"
             android:inputType="textPersonName"
-            android:hint="Enter Event Name"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText1"
@@ -69,8 +70,9 @@
             android:layout_below="@+id/createBtn"
             android:layout_marginEnd="103dp"
             android:ems="10"
+            android:hint="Enter Event Location"
             android:inputType="textPersonName"
-            android:hint="Enter Event Location" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText2"
@@ -80,8 +82,9 @@
             android:layout_below="@+id/createBtn"
             android:layout_marginEnd="103dp"
             android:ems="10"
+            android:hint="Enter Event Description"
             android:inputType="textPersonName"
-            android:hint="Enter Event Description" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -97,7 +100,6 @@
         android:layout_marginTop="420dp"
         tools:layout_editor_absoluteX="137dp"
         tools:layout_editor_absoluteY="418dp" />
-
 
 
 

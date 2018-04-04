@@ -29,7 +29,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     class SearchViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvName, tvDesc, tvPlaceAddress, tvUserName, tvUserPhoneNumber, tvUserEmail, tvBookLendDate, tvFromTime;
+        TextView tvName, tvDesc, tvPlaceAddress, tvPlaceName, tvUserName, tvUserPhoneNumber, tvUserEmail, tvBookLendDate, tvFromTime;
         public SearchViewHolder(View itemView){
             super(itemView);
             tvName = itemView.findViewById(R.id.tvBookName);
@@ -40,6 +40,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             tvUserEmail = itemView.findViewById(R.id.tvUserEmail);
             tvBookLendDate = itemView.findViewById(R.id.tvBookLendDate);
             tvFromTime = itemView.findViewById(R.id.tvFromTime);
+            tvPlaceName = itemView.findViewById(R.id.tvPlaceName);
         }
     }
 
@@ -72,6 +73,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.tvUserEmail.setText(userEmail.get(position));
         holder.tvBookLendDate.setText(bookLendDate.get(position));
         holder.tvFromTime.setText(fromTime.get(position));
+        holder.tvPlaceName.setText(placeName.get(position));
 
     }
 
