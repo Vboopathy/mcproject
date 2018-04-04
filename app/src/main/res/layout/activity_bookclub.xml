@@ -100,18 +100,21 @@
 
     <Button
         android:id="@+id/btnSignout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/createEventLayout"
+        android:background="@drawable/buttonstyle"
         android:onClick="signOut"
         android:text="S/O" />
 
     <Button
         android:id="@+id/toProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_alignEnd="@+id/createEventLayout"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonstyle"
         android:onClick="sendToProfile"
         android:text="to_profile" />
 
