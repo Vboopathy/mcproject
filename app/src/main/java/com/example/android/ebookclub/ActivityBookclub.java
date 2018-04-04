@@ -56,9 +56,7 @@ public class ActivityBookclub extends AppCompatActivity {
 
         //FOR MAIN
         mAuth = FirebaseAuth.getInstance();
-
-        btnSignout= findViewById(R.id.btnSignout);
-
+        
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

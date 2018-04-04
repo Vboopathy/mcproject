@@ -36,6 +36,7 @@ public class FictionListAdapter extends ArrayAdapter<fiction> {
         TextView textViewName = listViewItem.findViewById(R.id.tvbookname);
         TextView textViewauthorname = listViewItem.findViewById(R.id.tvauthorname);
         fiction fic = fictionList.get(position);
+
         textViewName.setText(fic.getName());
         textViewauthorname.setText(fic.getAuthorname());
 
