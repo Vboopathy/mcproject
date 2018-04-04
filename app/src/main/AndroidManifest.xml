@@ -25,7 +25,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
        
-        <activity android:name=".ActivityBookclub">
+        <activity android:name=".ActivityBookclub"
+            android:label="Go Back"
+            android:parentActivityName=".ActivityGenre"
+            android:theme="@style/AppTheme" >
 
         </activity>
 
@@ -34,10 +37,6 @@
 
         <activity android:name=".ActivityGenre">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--
@@ -50,7 +49,13 @@
             android:label="fiction"
             android:parentActivityName=".ActivityGenre"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ActivityLogin" />
+        <activity android:name=".ActivityLogin">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
 
         <!--
@@ -74,16 +79,15 @@
             android:label="Go Back"
             android:parentActivityName=".ActivityBookclub"
             android:theme="@style/AppTheme" />
-        <activity android:name=".BorrowBookActivity"/>
+        <activity android:name=".BorrowBookActivity"
+            android:label="Go Back"
+            android:parentActivityName=".ActivityGenre"
+            android:theme="@style/AppTheme" />
         <activity android:name=".ActivityRegister" />
         <activity android:name=".ActivityProfile" />
         <activity android:name=".FictionInfoActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ActivityGenreRomance" />
         <activity android:name=".RomanceInfoActivity" />
