@@ -50,7 +50,7 @@ public class ActivityRegister extends AppCompatActivity {
 
     //ActivityBookclub.class is the main activity
     void sendToMain() {
-        Intent mainIntent = new Intent(ActivityRegister.this, ActivityBookclub.class);
+        Intent mainIntent = new Intent(ActivityRegister.this, ActivityGenre.class);
         startActivity(mainIntent);
         finish();
     }
@@ -65,8 +65,6 @@ public class ActivityRegister extends AppCompatActivity {
         }
 
     }
-
-
 
     // todo password1 == password2  or password1 != password2
     public void registerUser(View view){
@@ -88,8 +86,4 @@ public class ActivityRegister extends AppCompatActivity {
 
     }
 }
-
-
-
-
 

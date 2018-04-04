@@ -59,7 +59,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     void sendToMain() {
-        Intent mainIntent = new Intent(ActivityLogin.this, ActivityBookclub.class);
+        Intent mainIntent = new Intent(ActivityLogin.this, ActivityGenre.class);
         startActivity(mainIntent);
         finish();
     }
