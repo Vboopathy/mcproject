@@ -53,14 +53,14 @@ public class ActivityGenre extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
 
-//                            case R.id.nav_lend:
-//                                callIntent(ActivityPlacePicker.class);
-//                                break;
-////
-//                            case R.id.nav_borrow:
-//                                callIntent(CourseList.class);
-//                                break;
-//
+                            case R.id.nav_lend:
+                                callIntent(ActivityLend.class);
+                                break;
+
+                            case R.id.nav_borrow:
+                                //callIntent(.class);
+                                break;
+
                             case R.id.nav_events:
                                 callIntent(ActivityBookclub.class);
                                 break;
