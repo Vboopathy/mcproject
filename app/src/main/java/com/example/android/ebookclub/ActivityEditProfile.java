@@ -54,7 +54,6 @@ public class ActivityEditProfile extends AppCompatActivity {
         profilePic = findViewById(R.id.editPicView);
         Context context = getApplicationContext();
 
-
         //get table from firebase
         userTable = FirebaseDatabase.getInstance().getReference().child("users");
     }
