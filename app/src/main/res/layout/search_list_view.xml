@@ -5,75 +5,83 @@
     android:orientation="horizontal"
     android:padding="10dp"
     android:background="@color/colorWhite">
+
     <TextView
         android:id="@+id/tvBookName"
-        android:background="@color/colorWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5sp"
         android:layout_weight="1"
-        android:text="text"/>
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tvUserName"
-        android:background="@color/colorWhite"
-        android:padding="5sp"
-        android:layout_weight="1"
-        android:text="text"
-        android:layout_below="@+id/tvBookName" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBookName"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/tvUserPhoneNumber"
-        android:background="@color/colorWhite"
-        android:padding="5sp"
-        android:layout_weight="1"
-        android:text="text"
-        android:layout_below="@+id/tvUserName" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserName"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/tvUserEmail"
-        android:background="@color/colorWhite"
-        android:padding="5sp"
-        android:layout_weight="1"
-        android:text="text"
-        android:layout_below="@+id/tvUserPhoneNumber" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserPhoneNumber"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/tvBookLendDate"
-        android:background="@color/colorWhite"
-        android:padding="5sp"
-        android:layout_weight="1"
-        android:text="text"
-        android:layout_below="@+id/tvUserEmail" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserEmail"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/tvFromTime"
-        android:background="@color/colorWhite"
-        android:padding="5sp"
-        android:layout_weight="1"
-        android:text="text"
-        android:layout_below="@+id/tvBookLendDate" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvBookDesc"
+        android:layout_below="@+id/tvBookLendDate"
+        android:layout_weight="1"
         android:background="@color/colorWhite"
         android:padding="5sp"
-        android:layout_weight="1"
         android:text="text"
-        android:layout_below="@+id/tvFromTime" />
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBookDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFromTime"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPlaceName"
@@ -82,17 +90,20 @@
         android:layout_alignEnd="@+id/tvBookDesc"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tvBookDesc"
-        android:padding="5sp"
         android:layout_weight="1"
-        android:text="text" />
+        android:padding="5sp"
+        android:text="text"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tvPlaceAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPlaceName"
         android:layout_weight="1"
         android:background="@color/colorWhite"
         android:padding="5sp"
         android:text="address"
-        android:layout_below="@+id/tvPlaceName"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

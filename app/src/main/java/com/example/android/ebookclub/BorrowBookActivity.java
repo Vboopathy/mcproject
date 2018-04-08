@@ -107,15 +107,15 @@ public class BorrowBookActivity extends AppCompatActivity {
 
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                     String bookID = snapshot.getKey();
-                    String bookNameDb = "Book Name :" + snapshot.child("book").getValue(String.class);
+                    String bookNameDb = "Book Name :  " + snapshot.child("book").getValue(String.class);
                     String bookPlaceAddress =  snapshot.child("placeAddress").getValue(String.class);
-                    String bookPlaceName = "Place :" + snapshot.child("placeName").getValue(String.class);
-                    String bookDescription = "Comments :" + snapshot.child("description").getValue(String.class);
-                    String bookLendingDate = "Date :" + snapshot.child("date").getValue(String.class);
-                    String userEmailDb = "Lender Email ID :" + snapshot.child("email").getValue(String.class);
-                    String fromTimeDb = "Time :" + snapshot.child("fromTime").getValue(String.class)+" - "+snapshot.child("toTime").getValue(String.class);
-                    String UserNameDb = "Lender Name :" + snapshot.child("name").getValue(String.class);
-                    String UserPhoneNum = "Lender Phone Number :" + snapshot.child("phoneNumber").getValue(String.class);
+                    String bookPlaceName = "Place :  " + snapshot.child("placeName").getValue(String.class);
+                    String bookDescription = "Comments :  " + snapshot.child("description").getValue(String.class);
+                    String bookLendingDate = "Date :  " + snapshot.child("date").getValue(String.class);
+                    String userEmailDb = "Lender Email ID :  " + snapshot.child("email").getValue(String.class);
+                    String fromTimeDb = "Time :  " + snapshot.child("fromTime").getValue(String.class)+" - "+snapshot.child("toTime").getValue(String.class);
+                    String UserNameDb = "Lender Name :  " + snapshot.child("name").getValue(String.class);
+                    String UserPhoneNum = "Lender Phone Number :  " + snapshot.child("phoneNumber").getValue(String.class);
 
                     if(bookNameDb.toLowerCase().contains(searchString.toLowerCase()) || bookPlaceAddress.toLowerCase().contains(searchString.toLowerCase())){
                         bookName.add(bookNameDb);
