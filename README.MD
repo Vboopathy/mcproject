@@ -1,4 +1,4 @@
-# E-Book Club
+# Team 18. E-Book Club.
 
 One paragraph to describe your project. Your description should include the project concept and key features implemented.
 
