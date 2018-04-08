@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class ActivityBookclub extends AppCompatActivity {
 
+    // variable declaration
     public Button createEvent;
     public Button done;
     public Button displayEvents;
@@ -50,6 +51,7 @@ public class ActivityBookclub extends AppCompatActivity {
         done=findViewById(R.id.btnDone);
         createEventLayout=findViewById(R.id.createEventLayout);
 
+        // firebase connection
         eventsList = FirebaseDatabase.getInstance().getReference("events");
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
         done.setVisibility(done.INVISIBLE);
@@ -57,6 +59,7 @@ public class ActivityBookclub extends AppCompatActivity {
         //FOR MAIN
         mAuth = FirebaseAuth.getInstance();
 
+        // visibility functionality
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +75,8 @@ public class ActivityBookclub extends AppCompatActivity {
                 eventName = editTextName.getText().toString();
                 eventLocation = editTextLocation.getText().toString();
                 eventDescription = editTextDesc.getText().toString();
+
+                // error check logic
                 if(eventName.equals(null) || eventName.equals("")){
                     editTextName.setError("Please enter the event name");
                 } else if(eventLocation.equals(null) || eventLocation.equals("")){
@@ -84,8 +89,7 @@ public class ActivityBookclub extends AppCompatActivity {
                 displayEvents.setVisibility(displayEvents.VISIBLE);
                 done.setVisibility(done.INVISIBLE);
 
-
-
+                    // function call to add event to firebase
                     addEvent();
                 }
             }
