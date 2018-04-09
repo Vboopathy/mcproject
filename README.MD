@@ -1,6 +1,10 @@
 # Team 18. E-Book Club.
 
-One paragraph to describe your project. Your description should include the project concept and key features implemented.
+We created  a mobile application called “E-BookClub”. The key functionality of the app is to let
+users lend and borrow books to each other using location. The borrower will be able to see the
+approximate location of the user and then decide if he can borrow the book. We have built the aplpication
+on the back of Firebase for its Database and oAuth. We have also implemented internet functionalities and
+GPS/location services.
 
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project. Example:
@@ -8,9 +12,10 @@ Provide a list of **ALL** the libraries you used for your project. Example:
 **google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
 
 ## Installation Notes
-Clone project into Android Studo. Sync files if needed, Build and Run
-Login details: email: mzimola@gmail.com
-			   pass:  useradmin
+Clone project into Android Studo. Sync files if needed, Build and Run.
+
+Login details: email: mzimola@gmail.com, pass: useradmin
+
 
 ## Code Examples
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
