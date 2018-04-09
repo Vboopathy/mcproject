@@ -64,10 +64,12 @@ public class ActivityBookclub extends AppCompatActivity {
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 createEventLayout.setVisibility(createEventLayout.VISIBLE);
                 createEvent.setVisibility(createEvent.INVISIBLE);
                 displayEvents.setVisibility(displayEvents.INVISIBLE);
                 done.setVisibility(done.VISIBLE);
+
             }
         });
 
