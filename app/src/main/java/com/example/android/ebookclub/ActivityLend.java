@@ -86,7 +86,21 @@ public class ActivityLend extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                saveInfo();
+                try {
+                    String fromTimeText = FromTime.getText().toString();
+                    String toTimeText = toTime.getText().toString();
+                    if(timeCheck( fromTimeText,  toTimeText))
+                    {
+                        toTime.setError("Please enter a valid To Time");
+                    }
+                    else
+                    {
+                        saveInfo();
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -198,24 +212,28 @@ public class ActivityLend extends AppCompatActivity {
         etDate.setText(sdf.format(myCalendar.getTime()));
     }
 
-    private void timeCheck(String fromTimeText, String toTimeText) throws ParseException {
-        fromTimeText = FromTime.getText().toString();
-        toTimeText = toTime.getText().toString();
+    private boolean timeCheck(String fromTimeText, String toTimeText) throws ParseException {
 
         Date date = new Date() ;
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm") ;
         dateFormat.format(date);
 
+        boolean time = true;
+
         try {
             if(dateFormat.parse(fromTimeText).after(dateFormat.parse(toTimeText)))
             {
-                Toast.makeText(getApplicationContext(), "Please Enter valid time!", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "Please Enter valid time!", Toast.LENGTH_LONG).show();
+                time = true;
             }else{
-
+               time = false;
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        return time;
+
     }
 
     //Saving info to firebase
