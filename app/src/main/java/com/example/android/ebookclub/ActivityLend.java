@@ -26,6 +26,7 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -85,7 +86,21 @@ public class ActivityLend extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                saveInfo();
+                try {
+                    String fromTimeText = FromTime.getText().toString();
+                    String toTimeText = toTime.getText().toString();
+                    if(timeCheck( fromTimeText,  toTimeText))
+                    {
+                        toTime.setError("Please enter a valid To Time");
+                    }
+                    else
+                    {
+                        saveInfo();
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -147,7 +162,13 @@ public class ActivityLend extends AppCompatActivity {
                         }, hour, minute, true);
                         mTimePicker.setTitle("Select From Time");
                         mTimePicker.show();
-
+                        String fromTimeText = FromTime.getText().toString();
+                        String toTimeText = toTime.getText().toString();
+                        try {
+                            timeCheck( fromTimeText,  toTimeText);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
                 }
                 return false;
             }
@@ -189,6 +210,30 @@ public class ActivityLend extends AppCompatActivity {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         etDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private boolean timeCheck(String fromTimeText, String toTimeText) throws ParseException {
+
+        Date date = new Date() ;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm") ;
+        dateFormat.format(date);
+
+        boolean time = true;
+
+        try {
+            if(dateFormat.parse(fromTimeText).after(dateFormat.parse(toTimeText)))
+            {
+                //Toast.makeText(getApplicationContext(), "Please Enter valid time!", Toast.LENGTH_LONG).show();
+                time = true;
+            }else{
+               time = false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return time;
+
     }
 
     //Saving info to firebase
