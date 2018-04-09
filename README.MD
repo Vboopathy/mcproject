@@ -7,7 +7,6 @@ on the back of Firebase for its Database and oAuth. We have also implemented int
 GPS/location services.
 
 ## Libraries
-Provide a list of **ALL** the libraries you used for your project.
 
 **firebase database** Firebase was used to create store and update data.
 
@@ -15,7 +14,7 @@ Provide a list of **ALL** the libraries you used for your project.
 
 **firebase UI** Used to implement RecyclerView
 
-
+**Google Places API** Used to get the lending location from the user. 
 
 ## Installation Notes
 Clone project into Android Studo. Sync files if needed, Build and Run.
@@ -23,7 +22,6 @@ Clone project into Android Studo. Sync files if needed, Build and Run.
 Login details: email: mzimola@gmail.com, pass: useradmin.
 
 You can also create a profile, however, the You will not have a user image.
-
 
 ## Code Examples
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
@@ -66,6 +64,38 @@ A short description.
     }
 ```
 
+**Problem 2 - Google Place picker**
+We faced problems with connecting to Google API and getting the lend location. The following snippet deals with the location permissions.
+
+```
+     private void requestPermission()
+    {
+        //LOOK INTO MANIFEST AND CHECK IF THE PERMISSION IS GRANTED, IF IT IS NOT GRANTED IT THIS WILL BY PASS THE CODE
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_DENIED) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_FINE_LOCATION);
+        }
+    }
+
+    //Requesting permission to location
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch ( requestCode )
+        {
+            case MY_PERMISSION_FINE_LOCATION :
+                if(grantResults[0] !=PackageManager.PERMISSION_GRANTED)
+                {
+                    Toast.makeText(getApplicationContext(), "This App requires location permission to be granted!", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+                break;
+
+        }
+
+    }
+```
+
 ## Feature Section
 - Firebase
 - Location Services / Map View
@@ -75,8 +105,7 @@ A short description.
 ## Final Project Status
 
 We ended up reaching all of our goals. As a team with 5 members who did not have any experience with MVC / framework development
-we learned a lot, and accomplished a significant amount. As you will see below, all of our features have been implemented. The next step for
-the application would to give the UI an overhaul as it is still clunky and not modern.
+we learned a lot, and accomplished a significant amount. As you will see below, all of our features have been implemented. The next step for the application would to give the UI an overhaul as it is still clunky and not modern.
 
 #### Minimum Functionality
 - Feature 1 Create UI Prototype (Completed)
@@ -107,3 +136,4 @@ What to include in your project sources:
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
 
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
+[3] 
