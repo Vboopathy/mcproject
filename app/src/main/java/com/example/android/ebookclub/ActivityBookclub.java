@@ -41,6 +41,7 @@ public class ActivityBookclub extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookclub);
+
         createEvent=findViewById(R.id.createBtn);
         editTextName = findViewById(R.id.editText);
         editTextLocation = findViewById(R.id.editText1);
@@ -69,21 +70,30 @@ public class ActivityBookclub extends AppCompatActivity {
                 done.setVisibility(done.VISIBLE);
             }
         });
+
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 eventName = editTextName.getText().toString();
                 eventLocation = editTextLocation.getText().toString();
                 eventDescription = editTextDesc.getText().toString();
 
                 // error check logic
                 if(eventName.equals(null) || eventName.equals("")){
+
                     editTextName.setError("Please enter the event name");
+
                 } else if(eventLocation.equals(null) || eventLocation.equals("")){
+
                     editTextLocation.setError("Please enter the event location");
+
                 } else if(eventDescription.equals(null) || eventDescription.equals("")){
+
                     editTextDesc.setError("Please enter the event description");
+
                 } else {
+
                 createEventLayout.setVisibility(createEventLayout.INVISIBLE);
                 createEvent.setVisibility(createEvent.VISIBLE);
                 displayEvents.setVisibility(displayEvents.VISIBLE);
@@ -91,6 +101,7 @@ public class ActivityBookclub extends AppCompatActivity {
 
                     // function call to add event to firebase
                     addEvent();
+
                 }
             }
         });
@@ -98,20 +109,24 @@ public class ActivityBookclub extends AppCompatActivity {
         displayEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent= new Intent(getApplicationContext(), ActivityEventsDisplay.class);
                 intent.putExtra("name",eventName);
                 intent.putExtra("location", eventLocation);
                 intent.putExtra("description", eventDescription);
                 startActivity(intent);
+
             }
         });
     }
 
     public void addEvent(){
+
         String id = eventsList.push().getKey();
         ActivityBookClubEventDTO clubEventDTO = new ActivityBookClubEventDTO(id, eventName, eventLocation, eventDescription);
         eventsList.child(id).setValue(clubEventDTO);
         Toast.makeText(this, "Event Created", Toast.LENGTH_SHORT).show();
+
     }
 
     //FOR MAIN
