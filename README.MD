@@ -9,7 +9,11 @@ GPS/location services.
 ## Libraries
 Provide a list of **ALL** the libraries you used for your project. Example:
 
-**google-gson:** Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Source [here](https://github.com/google/gson)
+**firebase database** Firebase was used to create store and update data.
+**firebase oAuth** Used to implement login and registration features of the application
+**firebase UI** Used to implement RecyclerView
+
+
 
 ## Installation Notes
 Clone project into Android Studo. Sync files if needed, Build and Run.
@@ -20,22 +24,41 @@ Login details: email: mzimola@gmail.com, pass: useradmin
 ## Code Examples
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
 
-**Problem 1: We needed a method to calculate a Fibonacci sequence**
+**Problem 1: Updating Profile**
+Updating the profile was tricky. Because the textfields in the update view are filled in through hints, the
+text values are not null, they are just an empty string "". After trial and error we were able to figure out
+how to let the user update their profile and send the data to firebase properly. The key was creating the isEditTextEmpty() method.
 
 A short description.
 ```
-// The method we implemented that solved our problem
-public static int fibonacci(int fibIndex) {
-    if (memoized.containsKey(fibIndex)) {
-        return memoized.get(fibIndex);
-    } else {
-        int answer = fibonacci(fibIndex - 1) + fibonacci(fibIndex - 2);
-        memoized.put(fibIndex, answer);
-        return answer;
-    }
+    public void saveProfile(View view){
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        userTable.orderByChild("email").equalTo(currentUser.getEmail()).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                //Set values in Profile to those in database.
+
+                if(!isEditTextEmpty(name)){
+                    System.out.println(name.getText().toString());
+                    dataSnapshot.getRef().child("name").setValue(name.getText().toString());}
+                if(!isEditTextEmpty(bio)){
+                    dataSnapshot.getRef().child("bio").setValue(bio.getText().toString());}
+                if(!isEditTextEmpty(city)){
+                    dataSnapshot.getRef().child("city").setValue(city.getText().toString());}
+                //int duration = Toast.LENGTH_SHORT;
+                //Toast toast = Toast.makeText(context, "Saved Profile.", duration);
+                //toast.show();
+                sendToMain();
+            }
 }
 
-// Source: Wikipedia Java [1]
+    private boolean isEditTextEmpty(EditText editText) {
+        if (editText.getText().toString().trim().length() > 0)
+            return false;
+        return true;
+    }
 ```
 
 ## Feature Section
