@@ -28,6 +28,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -36,8 +37,10 @@ import java.util.Locale;
 
 public class ActivityLend extends AppCompatActivity {
 
+    //Database reference to connect to firebase
     private DatabaseReference mDatabase;
 
+    //Creating Variables
     private EditText Name;
     private EditText book;
     private EditText Description;
@@ -49,7 +52,7 @@ public class ActivityLend extends AppCompatActivity {
     private EditText toTime;
     private Button GetPlace;
     private Button SaveDetails;
-    private EditText Date;
+    private EditText etDate;
     public static final int MY_PERMISSION_FINE_LOCATION = 101;
     int PLACE_PICKER_REQUEST = 1;
     final Calendar myCalendar = Calendar.getInstance();
@@ -60,8 +63,10 @@ public class ActivityLend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lend_new);
 
+        //Adding the reference to "lend" node in firebase
         mDatabase = FirebaseDatabase.getInstance().getReference("lend");
 
+        //Initializing the element variables
         PlaceName = (TextView) findViewById(R.id.PlaceName);
         PlaceAddress = (TextView) findViewById(R.id.PlaceAddress);
         GetPlace = (Button) findViewById(R.id.GetPlace);
@@ -73,8 +78,9 @@ public class ActivityLend extends AppCompatActivity {
         PhoneNumber = (EditText) findViewById(R.id.PhoneNumber);
         FromTime = (EditText) findViewById(R.id.fromTime);
         toTime = (EditText) findViewById(R.id.toTime);
-        Date = (EditText) findViewById(R.id.Date);
+        etDate = (EditText) findViewById(R.id.Date);
 
+        //For the lend details to be saved
         SaveDetails.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -83,6 +89,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Button Action to get Lending location
         GetPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +106,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Time picker for from time
         FromTime.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -121,6 +129,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Time picker for to Time
         toTime.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -136,7 +145,7 @@ public class ActivityLend extends AppCompatActivity {
                                 toTime.setText(selectedHour + ":" + selectedMinute);
                             }
                         }, hour, minute, true);
-                        mTimePicker.setTitle("Select Time");
+                        mTimePicker.setTitle("Select From Time");
                         mTimePicker.show();
 
                 }
@@ -144,6 +153,7 @@ public class ActivityLend extends AppCompatActivity {
             }
         });
 
+        //Date picker variables
         final DatePickerDialog.OnDateSetListener date = new
                 DatePickerDialog.OnDateSetListener() {
 
@@ -159,7 +169,8 @@ public class ActivityLend extends AppCompatActivity {
 
                 };
 
-        Date.setOnTouchListener(new View.OnTouchListener() {
+        //Date picker actions
+        etDate.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -175,12 +186,12 @@ public class ActivityLend extends AppCompatActivity {
 
     private void updateLabel() {
 
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        Date.setText(sdf.format(myCalendar.getTime()));
+        etDate.setText(sdf.format(myCalendar.getTime()));
     }
 
+    //Saving info to firebase
     private void saveInfo() {
 
         String PlaceAddressText = PlaceAddress.getText().toString();
@@ -191,13 +202,21 @@ public class ActivityLend extends AppCompatActivity {
         String PhoneNumberText = PhoneNumber.getText().toString();
         String FromTimeText = FromTime.getText().toString();
         String toTimeText = toTime.getText().toString();
-        String DateText = Date.getText().toString();
+        String DateText = etDate.getText().toString();
         String EmailText = email.getText().toString();
 
-        String id = mDatabase.push().getKey();
-        LendInformation Lend = new LendInformation(id, NameText, bookText, DescriptionText, EmailText, PhoneNumberText, PlaceNameText, PlaceAddressText, FromTimeText, toTimeText, DateText );
-        mDatabase.child(id).setValue(Lend);
-        Toast.makeText(getApplicationContext(), "Information Saved", Toast.LENGTH_LONG).show();
+        if(PlaceAddressText.equals("") || PlaceNameText.equals("") || NameText.equals("") || bookText.equals("") ||  FromTimeText.equals("") || toTimeText.equals("") || DateText.equals("") || EmailText.equals(""))
+        {
+            Toast.makeText(getApplicationContext(), "Please Enter all mandatory fields", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            String id = mDatabase.push().getKey();
+            LendInformation Lend = new LendInformation(id, NameText, bookText, DescriptionText, EmailText, PhoneNumberText, PlaceNameText, PlaceAddressText, FromTimeText, toTimeText, DateText );
+            mDatabase.child(id).setValue(Lend);
+            Toast.makeText(getApplicationContext(), "Information Saved", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
@@ -209,7 +228,7 @@ public class ActivityLend extends AppCompatActivity {
         }
     }
 
-
+    //Requesting permission to location
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -227,6 +246,8 @@ public class ActivityLend extends AppCompatActivity {
         }
 
     }
+
+    //Place picker code for lending location
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {

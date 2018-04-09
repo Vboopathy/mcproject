@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class BorrowBookActivity extends AppCompatActivity {
 
+    // variable declaration
     EditText searchBook;
     RecyclerView displayBooks;
     DatabaseReference databaseReference;
@@ -56,6 +57,7 @@ public class BorrowBookActivity extends AppCompatActivity {
         displayBooks.setLayoutManager(new LinearLayoutManager(this));
         displayBooks.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
+        // text change listener for search of every text
         searchBook.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -70,6 +72,7 @@ public class BorrowBookActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 if(!editable.toString().isEmpty()){
+                    // method call if search string is not empty
                     SetAdapter(editable.toString());
                 } else {
                     bookName.clear();
@@ -94,6 +97,7 @@ public class BorrowBookActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                // clear the list
                 bookName.clear();
                 bookDesc.clear();
                 bookLendDate.clear();
@@ -106,17 +110,20 @@ public class BorrowBookActivity extends AppCompatActivity {
                 displayBooks.removeAllViews();
 
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    String bookID = snapshot.getKey();
-                    String bookNameDb = "Book Name :" + snapshot.child("book").getValue(String.class);
-                    String bookPlaceAddress = "Address :" + snapshot.child("placeAddress").getValue(String.class);
-                    String bookPlaceName = "Place :" + snapshot.child("placeName").getValue(String.class);
-                    String bookDescription = "Comments :" + snapshot.child("description").getValue(String.class);
-                    String bookLendingDate = "Date :" + snapshot.child("date").getValue(String.class);
-                    String userEmailDb = "Lender Email ID :" + snapshot.child("email").getValue(String.class);
-                    String fromTimeDb = "Time :" + snapshot.child("fromTime").getValue(String.class)+" - "+snapshot.child("toTime").getValue(String.class);
-                    String UserNameDb = "Lender Name :" + snapshot.child("name").getValue(String.class);
-                    String UserPhoneNum = "Lender Phone Number :" + snapshot.child("phoneNumber").getValue(String.class);
 
+                    // retrieve data from firebase
+                    String bookID = snapshot.getKey();
+                    String bookNameDb = "Book Name :  " + snapshot.child("book").getValue(String.class);
+                    String bookPlaceAddress =  snapshot.child("placeAddress").getValue(String.class);
+                    String bookPlaceName = "Place :  " + snapshot.child("placeName").getValue(String.class);
+                    String bookDescription = "Comments :  " + snapshot.child("description").getValue(String.class);
+                    String bookLendingDate = "Date :  " + snapshot.child("date").getValue(String.class);
+                    String userEmailDb = "Lender Email ID :  " + snapshot.child("email").getValue(String.class);
+                    String fromTimeDb = "Time :  " + snapshot.child("fromTime").getValue(String.class)+" - "+snapshot.child("toTime").getValue(String.class);
+                    String UserNameDb = "Lender Name :  " + snapshot.child("name").getValue(String.class);
+                    String UserPhoneNum = "Lender Phone Number :  " + snapshot.child("phoneNumber").getValue(String.class);
+
+                    // perform comparison for search string and store related data
                     if(bookNameDb.toLowerCase().contains(searchString.toLowerCase()) || bookPlaceAddress.toLowerCase().contains(searchString.toLowerCase())){
                         bookName.add(bookNameDb);
                         bookDesc.add(bookDescription);
@@ -130,6 +137,7 @@ public class BorrowBookActivity extends AppCompatActivity {
                     }
                 }
 
+                // set value to the adapter
                 searchAdapter = new SearchAdapter(BorrowBookActivity.this, bookName, bookDesc, bookLendDate, userEmail, fromTime, userName, userPhoneNumber, placeAddress, placeName);
                 displayBooks.setAdapter(searchAdapter);
             }
@@ -140,4 +148,5 @@ public class BorrowBookActivity extends AppCompatActivity {
             }
         });
     }
+
 }

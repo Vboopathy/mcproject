@@ -12,7 +12,6 @@
         android:layout_height="wrap_content">
 
 
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -20,54 +19,60 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_marginEnd="94dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:text="Book Genre"
-            android:textColor="@android:color/black"
-            android:textSize="30sp" />
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/buttonfiction"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/textView"
-            android:layout_marginEnd="33dp"
-            android:layout_marginTop="33dp"
-            android:layout_toStartOf="@+id/textView"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/buttonstyle"
             android:text="Fiction"
             android:textColor="@android:color/holo_red_dark" />
 
         <Button
             android:id="@+id/buttonromance"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonfiction"
             android:layout_below="@+id/buttonfiction"
             android:layout_marginTop="48dp"
+            android:background="@drawable/buttonstyle"
             android:text="Romance"
             android:textColor="@android:color/holo_red_dark"
             android:textColorHighlight="@color/place_autocomplete_prediction_primary_text" />
 
         <Button
             android:id="@+id/buttonhorror"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonromance"
             android:layout_below="@+id/buttonromance"
             android:layout_marginTop="65dp"
+            android:background="@drawable/buttonstyle"
             android:text="Horror"
             android:textColor="@android:color/holo_red_dark" />
 
         <Button
             android:id="@+id/buttonselfhelp"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonhorror"
             android:layout_below="@+id/buttonhorror"
             android:layout_marginTop="58dp"
+            android:background="@drawable/buttonstyle"
             android:text="Self Help"
             android:textColor="@android:color/holo_red_dark" />
 
     </RelativeLayout>
+
 
 
     <android.support.design.widget.NavigationView
