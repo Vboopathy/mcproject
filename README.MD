@@ -24,8 +24,6 @@ Login details: email: mzimola@gmail.com, pass: useradmin.
 You can also create a profile, however, the You will not have a user image.
 
 ## Code Examples
-You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
-
 **Problem 1: Updating Profile**
 
 Updating the profile was tricky. Because the textfields in the update view are filled in through hints, the
@@ -125,14 +123,6 @@ we learned a lot, and accomplished a significant amount. As you will see below, 
 - Feature 3 Book club events (Completed)
 
 ## Sources
-Use IEEE citation style.
-What to include in your project sources:
-- Stock images
-- Design guides
-- Programming tutorials
-- Research material
-- Android libraries
-
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
 [3] "Time picker code", https://stackoverflow.com/questions/17901946/timepicker-dialog-from-clicking-edittext
