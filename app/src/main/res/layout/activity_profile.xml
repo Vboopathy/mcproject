@@ -17,7 +17,8 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/profile_image_final"/>
 
         <ImageView
             android:id="@+id/editBtnView"
@@ -27,8 +28,6 @@
             android:layout_alignParentRight="true"
             android:onClick="sentToEditProfile"
             android:src="@mipmap/edit_btn" />
-
-
 
     </RelativeLayout>
 
@@ -63,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:textSize="15sp"
-            android:text="Mathew Zimola"
+            android:text="Click the edit button to update profile"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"/>
 
@@ -75,7 +74,6 @@
             android:layout_below="@+id/fNameTextView"
             android:layout_marginTop="20dp"
             android:textSize="15sp"
-            android:text="Halifax, NS"
             android:textStyle="bold"/>
 
         <TextView
@@ -85,8 +83,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/locationTextView"
             android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:text="Student living in Halifax, NS. I enjoy non-fiction"/>
+            android:textSize="15sp" />
     </RelativeLayout>
 
 
