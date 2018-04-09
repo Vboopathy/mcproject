@@ -18,7 +18,9 @@ Provide a list of **ALL** the libraries you used for your project. Example:
 ## Installation Notes
 Clone project into Android Studo. Sync files if needed, Build and Run.
 
-Login details: email: mzimola@gmail.com, pass: useradmin
+Login details: email: mzimola@gmail.com, pass: useradmin.
+
+You can also create a profile, however, the You will not have a user image.
 
 
 ## Code Examples
@@ -69,7 +71,10 @@ A short description.
 
 
 ## Final Project Status
-Write a description of the final status of the project. Did you achieve all your goals? What would be the next step for this project (if it were to continue)?
+
+We ended up reaching all of our goals. As a team with 5 members who did not have any experience with MVC / framework development
+we learned a lot, and accomplished a significant amount. As you will see below, all of our features have been implemented. The next step for
+the application would to give the UI an overhaul as it is still clunky and not modern.
 
 #### Minimum Functionality
 - Feature 1 Create UI Prototype (Completed)
@@ -96,7 +101,6 @@ What to include in your project sources:
 - Programming tutorials
 - Research material
 - Android libraries
-- Everything listed on the Dalhousie [*Plagiarism and Cheating*](https://www.dal.ca/dept/university_secretariat/academic-integrity/plagiarism-cheating.html)
-- Remember AC/DC *Always Cite / Don't Cheat* (see Lecture 0 for more info)
 
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
+[2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
