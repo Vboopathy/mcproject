@@ -7,10 +7,12 @@ on the back of Firebase for its Database and oAuth. We have also implemented int
 GPS/location services.
 
 ## Libraries
-Provide a list of **ALL** the libraries you used for your project. Example:
+Provide a list of **ALL** the libraries you used for your project.
 
 **firebase database** Firebase was used to create store and update data.
+
 **firebase oAuth** Used to implement login and registration features of the application
+
 **firebase UI** Used to implement RecyclerView
 
 
@@ -103,4 +105,5 @@ What to include in your project sources:
 - Android libraries
 
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
+
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
