@@ -8,11 +8,11 @@ GPS/location services.
 
 ## Libraries
 
-**firebase database** Firebase was used to create store and update data.
+**Firebase database** Firebase was used to create store and update data.
 
-**firebase oAuth** Used to implement login and registration features of the application
+**Firebase oAuth** Used to implement login and registration features of the application
 
-**firebase UI** Used to implement RecyclerView
+**Firebase UI** Used to implement RecyclerView
 
 **Google Places API** Used to get the lending location from the user. 
 
@@ -124,5 +124,7 @@ we learned a lot, and accomplished a significant amount. As you will see below, 
 
 ## Sources
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
+
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
+
 [3] "Time picker code", https://stackoverflow.com/questions/17901946/timepicker-dialog-from-clicking-edittext
