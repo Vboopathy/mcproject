@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class ActivityEventsDisplay extends AppCompatActivity {
 
+    // variable declaration
     private ArrayList<ActivityBookClubEventDTO> displayEventList;
     private EventAdaptor adapter;
     ListView lvEvents;
@@ -31,14 +32,13 @@ public class ActivityEventsDisplay extends AppCompatActivity {
         lvEvents = findViewById(R.id.lvEvents);
         displayEventList = new ArrayList<>();
 
-        //adapter = new EventAdaptor(this, R.layout.list_view, displayEventList);
-        //lvEvents.setAdapter(adapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+        // fetch data from firebase
         eventsList.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
