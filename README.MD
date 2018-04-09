@@ -129,3 +129,5 @@ we learned a lot, and accomplished a significant amount. As you will see below, 
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
 
 [3] "Time picker code", https://stackoverflow.com/questions/17901946/timepicker-dialog-from-clicking-edittext
+
+[4] "Tutorial on Firebase", YouTube, 2018. [Online]. Available: https://www.youtube.com/watch?v=hREyErUJu6I

@@ -26,6 +26,7 @@ public class ActivityEventsDisplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_display);
+
         eventsList = FirebaseDatabase.getInstance().getReference("events");
         Intent intent= getIntent();
 
@@ -42,10 +43,13 @@ public class ActivityEventsDisplay extends AppCompatActivity {
         eventsList.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 displayEventList.clear();
                 for(DataSnapshot eventSnapshot: dataSnapshot.getChildren()){
+
                     ActivityBookClubEventDTO event = eventSnapshot.getValue(ActivityBookClubEventDTO.class);
                     displayEventList.add(event);
+
                 }
 
                 adapter = new EventAdaptor(ActivityEventsDisplay.this, displayEventList);

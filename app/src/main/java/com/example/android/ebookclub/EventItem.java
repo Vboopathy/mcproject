@@ -6,8 +6,10 @@ package com.example.android.ebookclub;
 
 public class EventItem {
     public EventItem(String base, String value) {
+
         this.base = base;
         this.value = value;
+
     }
 
     private String base;
@@ -15,11 +17,15 @@ public class EventItem {
 
     public String getBase()
     {
+
         return this.base;
+
     }
 
     public String getValue()
     {
+
         return this.value;
+
     }
 }

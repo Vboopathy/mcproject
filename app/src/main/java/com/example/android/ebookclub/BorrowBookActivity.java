@@ -40,9 +40,11 @@ public class BorrowBookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_borrow_book);
+
         searchBook = findViewById(R.id.searchBook);
         displayBooks = findViewById(R.id.displayBooks);
         databaseReference = FirebaseDatabase.getInstance().getReference("lend");
+
         bookName = new ArrayList<>();
         bookDesc = new ArrayList<>();
         bookLendDate = new ArrayList<>();
@@ -71,10 +73,14 @@ public class BorrowBookActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
                 if(!editable.toString().isEmpty()){
+
                     // method call if search string is not empty
                     SetAdapter(editable.toString());
+
                 } else {
+
                     bookName.clear();
                     bookDesc.clear();
                     bookLendDate.clear();
@@ -85,6 +91,7 @@ public class BorrowBookActivity extends AppCompatActivity {
                     placeAddress.clear();
                     placeName.clear();
                     displayBooks.removeAllViews();
+
                 }
 
             }
@@ -134,12 +141,16 @@ public class BorrowBookActivity extends AppCompatActivity {
                         userPhoneNumber.add(UserPhoneNum);
                         placeAddress.add(bookPlaceAddress);
                         placeName.add(bookPlaceName);
+
+
                     }
                 }
+
 
                 // set value to the adapter
                 searchAdapter = new SearchAdapter(BorrowBookActivity.this, bookName, bookDesc, bookLendDate, userEmail, fromTime, userName, userPhoneNumber, placeAddress, placeName);
                 displayBooks.setAdapter(searchAdapter);
+
             }
 
             @Override
