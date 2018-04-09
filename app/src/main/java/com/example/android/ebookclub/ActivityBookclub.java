@@ -52,6 +52,7 @@ public class ActivityBookclub extends AppCompatActivity {
         done=findViewById(R.id.btnDone);
         createEventLayout=findViewById(R.id.createEventLayout);
 
+
         // firebase connection
         eventsList = FirebaseDatabase.getInstance().getReference("events");
         createEventLayout.setVisibility(createEventLayout.INVISIBLE);
@@ -69,6 +70,7 @@ public class ActivityBookclub extends AppCompatActivity {
                 createEvent.setVisibility(createEvent.INVISIBLE);
                 displayEvents.setVisibility(displayEvents.INVISIBLE);
                 done.setVisibility(done.VISIBLE);
+
 
             }
         });
@@ -123,6 +125,7 @@ public class ActivityBookclub extends AppCompatActivity {
     }
 
     public void addEvent(){
+
 
         String id = eventsList.push().getKey();
         ActivityBookClubEventDTO clubEventDTO = new ActivityBookClubEventDTO(id, eventName, eventLocation, eventDescription);
