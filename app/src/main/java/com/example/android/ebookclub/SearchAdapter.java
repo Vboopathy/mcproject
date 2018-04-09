@@ -16,6 +16,7 @@ import java.util.ArrayList;
  */
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
+
     Context context;
     ArrayList<String> bookName;
     ArrayList<String> bookDesc;
@@ -31,6 +32,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
         TextView tvName, tvDesc, tvPlaceAddress, tvPlaceName, tvUserName, tvUserPhoneNumber, tvUserEmail, tvBookLendDate, tvFromTime;
         public SearchViewHolder(View itemView){
+
             super(itemView);
             tvName = itemView.findViewById(R.id.tvBookName);
             tvDesc = itemView.findViewById(R.id.tvBookDesc);
@@ -41,10 +43,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             tvBookLendDate = itemView.findViewById(R.id.tvBookLendDate);
             tvFromTime = itemView.findViewById(R.id.tvFromTime);
             tvPlaceName = itemView.findViewById(R.id.tvPlaceName);
+
         }
     }
 
     public SearchAdapter(Context context, ArrayList<String> bookName, ArrayList<String> bookDesc, ArrayList<String> bookLendDate, ArrayList<String> userEmail, ArrayList<String> fromTime, ArrayList<String> userName, ArrayList<String> userPhoneNumber, ArrayList<String> placeAddress, ArrayList<String> placeName) {
+
         this.context = context;
         this.bookName = bookName;
         this.bookDesc = bookDesc;
@@ -55,16 +59,20 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         this.userPhoneNumber = userPhoneNumber;
         this.placeAddress = placeAddress;
         this.placeName = placeName;
+
     }
 
     @Override
     public SearchAdapter.SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.search_list_view, parent, false);
         return new SearchAdapter.SearchViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(SearchViewHolder holder, int position) {
+
         holder.tvName.setText(bookName.get(position));
         holder.tvDesc.setText(bookDesc.get(position));
         holder.tvPlaceAddress.setText(placeAddress.get(position));
@@ -75,10 +83,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.tvFromTime.setText(fromTime.get(position));
         holder.tvPlaceName.setText(placeName.get(position));
 
+
     }
 
     @Override
     public int getItemCount() {
+
         return bookName.size();
+
     }
 }
