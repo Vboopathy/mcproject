@@ -26,6 +26,7 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -147,7 +148,13 @@ public class ActivityLend extends AppCompatActivity {
                         }, hour, minute, true);
                         mTimePicker.setTitle("Select From Time");
                         mTimePicker.show();
-
+                        String fromTimeText = FromTime.getText().toString();
+                        String toTimeText = toTime.getText().toString();
+                        try {
+                            timeCheck( fromTimeText,  toTimeText);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
                 }
                 return false;
             }
@@ -189,6 +196,26 @@ public class ActivityLend extends AppCompatActivity {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         etDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void timeCheck(String fromTimeText, String toTimeText) throws ParseException {
+        fromTimeText = FromTime.getText().toString();
+        toTimeText = toTime.getText().toString();
+
+        Date date = new Date() ;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm") ;
+        dateFormat.format(date);
+
+        try {
+            if(dateFormat.parse(fromTimeText).after(dateFormat.parse(toTimeText)))
+            {
+                Toast.makeText(getApplicationContext(), "Please Enter valid time!", Toast.LENGTH_LONG).show();
+            }else{
+
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     //Saving info to firebase
