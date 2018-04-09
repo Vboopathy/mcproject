@@ -25,6 +25,7 @@ Login details: email: mzimola@gmail.com, pass: useradmin
 You will encounter roadblocks and problems while developing your project. Share 2-3 'problems' that your team solved while developing your project. Write a few sentences that describe your solution and provide a code snippet/block that shows your solution. Example:
 
 **Problem 1: Updating Profile**
+
 Updating the profile was tricky. Because the textfields in the update view are filled in through hints, the
 text values are not null, they are just an empty string "". After trial and error we were able to figure out
 how to let the user update their profile and send the data to firebase properly. The key was creating the isEditTextEmpty() method.
