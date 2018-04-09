@@ -134,6 +134,5 @@ What to include in your project sources:
 - Android libraries
 
 [1] "Java (programming language)", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Java_(programming_language).
-
 [2] "Android Firebase Tutorials", TVAC Studio, 2018. [Online]. Available: https://www.youtube.com/user/akshayejh/videos
-[3] 
+[3] "Time picker code", https://stackoverflow.com/questions/17901946/timepicker-dialog-from-clicking-edittext
