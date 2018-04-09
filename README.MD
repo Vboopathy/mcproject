@@ -63,6 +63,7 @@ A short description.
 ```
 
 **Problem 2 - Google Place picker**
+
 We faced problems with connecting to Google API and getting the lend location. The following snippet deals with the location permissions.
 
 ```
